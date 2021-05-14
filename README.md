@@ -3,7 +3,7 @@ Web Application developed using Angular 10, ASP.net Core Web API, Entity Framewo
 
 
 ## Contribution
-Muhammad Subhan Raza
-Muhammad Zeeshan Imran
-Moiz Madni Khan
+Muhammad Subhan Raza,
+ Muhammad Zeeshan Imran,
+ Moiz Madni Khan
 
