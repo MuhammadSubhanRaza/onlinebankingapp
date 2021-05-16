@@ -1,0 +1,114 @@
+
+  <div class="loaderContainer" *ngIf="spinnerStatus">
+    <div class="loaderSpin">
+    <mat-spinner color="accent" class="" ></mat-spinner>
+    <h5>loading...</h5>
+    </div>
+  </div>
+
+
+  <mat-sidenav-container class="myNav">
+
+    <mat-sidenav class="navArea" mode="push" #sideNav>
+      <div>
+        <br>
+        <button class="navButtons" mat-button (click)="sideNav.toggle()" routerLink="departments">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">apps</mat-icon>
+          <h4 class="mat-caption">Departments</h4>
+        </button>
+        <button class="navButtons" (click)="sideNav.toggle()" mat-button routerLink="employees">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">person</mat-icon>
+          <h4 class="mat-caption">Employees</h4>
+        </button>
+        <button class="navButtons" (click)="sideNav.toggle()" mat-button>
+          <mat-icon aria-hidden="false" aria-label="Example home icon">groups</mat-icon>
+          <h4 class="mat-caption">Customers</h4>
+        </button>
+        <button class="navButtons" (click)="sideNav.toggle()" mat-button>
+          <mat-icon aria-hidden="false" aria-label="Example home icon">list</mat-icon>
+          <h4 class="mat-caption">transactions</h4>
+        </button>
+        <button class="navButtons" (click)="sideNav.toggle()" mat-button>
+          <mat-icon aria-hidden="false" aria-label="Example home icon">apartment</mat-icon>
+          <h4 class="mat-caption">Branch</h4>
+        </button>
+        <button class="navButtons" (click)="sideNav.toggle()" mat-button>
+          <mat-icon aria-hidden="false" aria-label="Example home icon">payments</mat-icon>
+          <h4 class="mat-caption">Loan</h4>
+        </button>
+        <button class="navButtons" (click)="sideNav.toggle()" mat-button>
+          <mat-icon aria-hidden="false" aria-label="Example home icon">money</mat-icon>
+          <h4 class="mat-caption">Accounts</h4>
+        </button>
+        <button class="navButtons" (click)="sideNav.toggle()" mat-button>
+          <mat-icon aria-hidden="false" aria-label="Example home icon">settings</mat-icon>
+          <h4 class="mat-caption">Setting</h4>
+        </button>
+      </div>
+    </mat-sidenav>
+
+
+
+    <!-- -- SIDE NAV CONTENT -- -->
+
+
+
+
+    <mat-sidenav-content class="navContentArea">
+
+
+
+      <!-- -- TOOLBAR-- -->
+      <mat-toolbar color="primary">
+        <img class="imgLogo" src="./../assets/logo2.png" alt="">
+        <div>
+          <h3 class="mat-body-2">ONLINE BANKING APP</h3>
+          <div class="mat-caption appSubTitle">An Ultimate Banking Solution </div>
+        </div>
+        <span class="example-spacer"></span>
+        <div class="notificationArea">
+
+          <button mat-icon-button color="accent">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">email</mat-icon>
+          </button>
+          <span matBadge="5" matBadgePosition="above after">
+          </span>
+          <button mat-icon-button color="accent">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">report</mat-icon>
+          </button>
+          <span matBadge="5" matBadgePosition="above after">
+          </span>
+          <button mat-icon-button color="accent">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">notifications</mat-icon>
+          </button>
+          <span matBadge="5" class="badgeIndicator" matBadgePosition="above after">
+          </span>
+        </div>
+      </mat-toolbar>
+
+
+
+      <!-- -- NAV BUTTON BAR -- -->
+
+
+
+      <mat-toolbar class="navBtnBar">
+        <button mat-button color="primary" (click)="sideNav.toggle()">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">menu</mat-icon>
+        </button>
+        <span class="example-spacer"></span>
+        <div class="mat-subheading-1 userName">Muhammad Subhan Raza</div>
+      </mat-toolbar>
+
+
+      <div class="appication-content">
+        <router-outlet></router-outlet>
+      </div>
+
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+  
+
+  <!-- <app-login></app-login> -->
+

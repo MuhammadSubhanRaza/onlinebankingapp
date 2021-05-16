@@ -1,0 +1,123 @@
+<div class="empStepperContainer">
+    <mat-horizontal-stepper linear>
+        <mat-step label="Personal Information" completed="true">
+            <br><br>
+            <div class="empStepper">
+                <div class="first">
+                    <mat-icon aria-hidden="false" class="fieldIcons" aria-label="Example home icon">person</mat-icon>
+                    <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker>
+                        <mat-label>
+                            First Name
+                        </mat-label>
+                        <input matInput required>
+                    </mat-form-field>
+                    <br><br>
+                    <mat-icon aria-hidden="false" class="fieldIcons" aria-label="Example home icon">person</mat-icon>
+                    <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker>
+                        <mat-label>Last Name</mat-label>
+                        <input matInput required>
+                    </mat-form-field>
+                    <br><br>
+
+                    <mat-icon aria-hidden="false" class="fieldIcons" aria-label="Example home icon">phone</mat-icon>
+                    <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker>
+                        <mat-label>Contact</mat-label>
+                        <input matInput required>
+                    </mat-form-field>
+                </div>
+                <mat-divider [vertical]="true"></mat-divider>
+                <span class="spacer"></span>
+                <div class="second">
+                    <mat-icon aria-hidden="false" class="fieldIcons" aria-label="Example home icon">email</mat-icon>
+                    <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker>
+                        <mat-label>Email</mat-label>
+                        <input matInput required>
+                    </mat-form-field>
+
+                    <br><br>
+                    <mat-icon aria-hidden="false" class="fieldIcons" aria-label="Example home icon">event</mat-icon>
+                    <mat-form-field>
+                        <mat-label>Date Of Birth</mat-label>
+                        <input matInput [matDatepicker]="myDatePicker">
+                        <mat-datepicker-toggle [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
+                        <mat-datepicker #myDatePicker></mat-datepicker>
+                    </mat-form-field>
+
+                    <br><br>
+                    <mat-radio-group>
+                        <mat-icon aria-hidden="false" class="fieldIcons" aria-label="Example home icon">wc</mat-icon>
+                        <span class="spacer"></span>
+                        <mat-radio-button color="primary" value="0">Male</mat-radio-button>
+                        <span class="spacer"></span>
+                        <mat-radio-button color="primary" value="1">Female</mat-radio-button>
+                    </mat-radio-group>
+
+                    <br>
+
+                </div>
+                <button mat-button matStepperNext>
+                    Next
+                    <mat-icon aria-hidden="false" aria-label="Example home icon">arrow_forward</mat-icon>
+                </button>
+            </div>
+
+        </mat-step>
+        <mat-step label="Proffessional Information" completed="false" optional>
+            <br><br>
+            <div class="empStepper">
+                <button mat-button matStepperPrevious>
+                    <mat-icon aria-hidden="false" aria-label="Example home icon">arrow_back</mat-icon>
+                    Back
+                </button>
+            <div class="first">
+                <mat-icon aria-hidden="false" class="fieldIcons" aria-label="Example home icon">school</mat-icon>
+                <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker>
+                    <mat-label>Qualification</mat-label>
+                    <input matInput required>
+                </mat-form-field>
+                <br><br>
+                <mat-icon aria-hidden="false" class="fieldIcons" aria-label="Example home icon">grid_view</mat-icon>
+                <mat-form-field>
+                    <mat-label>Department</mat-label>
+                    <mat-select>
+                        <mat-option value="1">Angular</mat-option>
+                        <mat-option value="2">Vue</mat-option>
+                        <mat-option value="3">React</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <br><br>
+                <mat-icon aria-hidden="false" class="fieldIcons" aria-label="Example home icon">attach_money</mat-icon>
+                <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker>
+                    <mat-label>Salary</mat-label>
+                    <input matInput required>
+                </mat-form-field>
+            </div>
+            <mat-divider [vertical]="true"></mat-divider>
+            <span class="spacer"></span>
+            <div class="second">
+                <mat-icon aria-hidden="false" class="fieldIcons" aria-label="Example home icon">person</mat-icon>
+                <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker>
+                    <mat-label>User Name</mat-label>
+                    <input matInput required>
+                </mat-form-field>
+                <br><br>
+                <mat-icon aria-hidden="false" class="fieldIcons" aria-label="Example home icon">password</mat-icon>
+                <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker>
+                    <mat-label>Password</mat-label>
+                    <input matInput required>
+                </mat-form-field>
+                <br><br>
+                <button mat-raised-button color="accent">
+                    <mat-icon aria-hidden="false" aria-label="Example home icon">cancel</mat-icon>
+                    Cancel
+                </button>
+                <button mat-raised-button color="primary">
+                    <mat-icon aria-hidden="false" aria-label="Example home icon">save</mat-icon>
+                    Save
+                </button>
+            </div>
+
+            </div>
+        </mat-step>
+    </mat-horizontal-stepper>
+</div>

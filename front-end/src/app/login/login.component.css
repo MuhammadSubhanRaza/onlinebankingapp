@@ -1,0 +1,104 @@
+.mainLoginScreenContainer {
+  /* background: linear-gradient(90deg, rgb(255, 170, 42), rgb(46, 0, 131));
+   */
+  /* background-color: rgb(255, 115, 0); */
+  height: 100%;
+  background: url("./../../assets/loginback2.jpg");
+  background-size: cover;
+}
+
+.loginInner {
+  /* background-color: rgba(11, 1, 29, 0.7); */
+  /* background: linear-gradient(
+    45deg,
+    rgb(36, 1, 102, 0.7),
+    rgb(177, 100, 0, 0.7)
+  ); */
+  background-color: rgba(38, 0, 73, 0.75);
+  height: inherit;
+}
+
+.loginContainer {
+  height: 450px;
+  width: 350px;
+  background-color: rgb(224, 224, 224);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+  /* box-shadow: rgb(0, 0, 0) 0px 0px 18px; */
+}
+
+.loginCardHeader {
+  text-align: center;
+}
+
+img {
+  width: 50px;
+  height: 50px;
+}
+
+.loginTitle {
+  letter-spacing: 3px;
+  margin: 0;
+}
+.loginCardHeader p {
+  padding-top: 15px;
+  margin: 0;
+  letter-spacing: 2px;
+  /* text-transform: uppercase; */
+}
+
+.loginForm {
+  padding: 10px 30px;
+}
+
+.loginForm mat-form-field,
+button {
+  width: 100%;
+}
+.loginForm a {
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  padding-top: 10px;
+  font-size: 1rem;
+}
+
+.firstHalf {
+  color: white;
+  text-align: center;
+}
+
+.firstHalf ul li {
+  display: block;
+  color: rgb(194, 194, 194);
+}
+
+.firstHalf h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.firstHalf h1 {
+  color: orange;
+  font-size: 2rem;
+  padding: 0;
+  margin: 0;
+  padding-top: 30px;
+}
+
+.appReagrds {
+  padding-top: 60px;
+  color: orange;
+}
+
+@media only screen and (max-width: 800px) {
+  .firstHalf {
+    display: none;
+  }
+  .loginContainer {
+    transform: translate(-50%, -50%);
+  }
+}
