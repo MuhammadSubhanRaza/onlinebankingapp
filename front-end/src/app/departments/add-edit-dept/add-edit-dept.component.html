@@ -1,10 +1,10 @@
 <div>
-    <h2 mat-dialog-title>ADD DEPARTMENT</h2>
+    <h2 mat-dialog-title>ADD / EDIT DEPARTMENT</h2>
     <form [formGroup]="departmentForm" (ngSubmit)="onSubmit()">
         <mat-dialog-content>
             <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker appearance="outline">
                 <mat-label>Department Name</mat-label>
-                <input formControlName="txtDepartmentName" matInput required>
+                <input formControlName="txtDepartmentName" [(ngModel)]="departmentName" matInput required>
                 <mat-hint align="end">Min 5 Character</mat-hint>
             </mat-form-field>
             <button mat-stroked-button color="warn" mat-dialog-close>Close</button>
@@ -13,3 +13,8 @@
     </form>
 </div>
 
+<!-- formControlName="txtDepartmentName" -->
+<!-- value="{{department.deptName}}" -->
+<!-- [formGroup]="departmentForm" (ngSubmit)="onSubmit()" -->
+<!-- type="submit" -->
+<!-- value="{{departmentName}}" -->

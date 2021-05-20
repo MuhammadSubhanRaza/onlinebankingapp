@@ -32,7 +32,7 @@
 
             <!-- Name Column -->
             <ng-container matColumnDef="action">
-                <th mat-header-cell mat-sort-header *matHeaderCellDef> Actions </th>
+                <th mat-header-cell *matHeaderCellDef> Actions </th>
                 <td mat-cell *matCellDef="let element"> 
                     <button mat-button color="primary" (click)="updateRecord(element)">
                         <mat-icon aria-hidden="false" aria-label="Example home icon">edit</mat-icon>
@@ -46,8 +46,7 @@
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
-    
-        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+        <mat-paginator [pageSizeOptions]="[5,10,20]" showFirstLastButtons></mat-paginator>
     </div>
 
 </div>

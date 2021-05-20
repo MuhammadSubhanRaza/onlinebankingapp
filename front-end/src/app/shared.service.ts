@@ -18,17 +18,40 @@ export class SharedService {
 
   addDepartment(val : any)
   {
+    console.log(val)
     return this.http.post(this.apiUrl,val)
   }
+
+  deleteDepartment(val:any){
+    return this.http.delete(this.apiUrl+"/"+val.deptId,val.deptId)
+  }
+
+  updateDepartment(val:any)
+  {
+    return this.http.put(this.apiUrl+"/"+val.deptId,val)
+  }
+
 
 
   
   crudState :boolean = false ;
-
+  modifiedState = false
   
   changeState()
   {
     this.crudState = true
+  }
+  changeStateToFalse()
+  {
+    this.crudState = false
+  }
+
+  changeModifiedState()
+  {
+    this.modifiedState = true
+  }
+  changeModifiedStateToFalse(){
+    this.modifiedState = false
   }
 
 

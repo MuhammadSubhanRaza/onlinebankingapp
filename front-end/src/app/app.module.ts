@@ -32,7 +32,10 @@ import { AddeditApplicationComponent } from './loan-application/addedit-applicat
 import { EmpSettingsComponent } from './emp-settings/emp-settings.component';
 import { CustSettingsComponent } from './cust-settings/cust-settings.component';
 import { CustDashboardComponent } from './cust-dashboard/cust-dashboard.component';
-import { ReactiveFormsModule } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms';
+import { DeleteDeptComponent } from './departments/delete-dept/delete-dept.component'
+import { FormsModule } from '@angular/forms'
+import { SharedService } from './shared.service';
 
 
 @NgModule({
@@ -63,6 +66,7 @@ import { ReactiveFormsModule } from '@angular/forms'
     EmpSettingsComponent,
     CustSettingsComponent,
     CustDashboardComponent,
+    DeleteDeptComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,9 +75,10 @@ import { ReactiveFormsModule } from '@angular/forms'
     AppRoutingModule,
     HttpClientModule,
     FlexLayoutModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

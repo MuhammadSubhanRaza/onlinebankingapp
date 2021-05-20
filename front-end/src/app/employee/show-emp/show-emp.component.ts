@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, OnInit,ViewChild } from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 
 @Component({
@@ -12,6 +13,7 @@ export class ShowEmpComponent implements AfterViewInit,OnInit {
   spinnerStatus = false;
   dataStatus = true;
 
+
   constructor() { 
     
   }
@@ -23,9 +25,11 @@ displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort : MatSort
 
   ngAfterViewInit() {
       this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
   }
 
 
