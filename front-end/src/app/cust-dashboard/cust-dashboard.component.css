@@ -1,0 +1,116 @@
+.ribbon img {
+  width: 80px;
+  height: 80px;
+  background-color: gray;
+  border-radius: 50%;
+}
+
+.ribbon {
+  min-height: 120px;
+  float: right;
+}
+
+.spacer {
+  padding: 0px 15px;
+}
+
+.ribbon p {
+  font-size: 0.9rem;
+  padding: 0;
+  margin: 0;
+}
+
+.ribbon h1 {
+  padding: 0;
+  margin: 0;
+  font-size: 2rem;
+  padding-top: 5px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+mat-grid-tile {
+  background-color: hotpink;
+}
+
+/* ---------------
+ */
+
+.cardsGroup {
+  min-height: 110%;
+  display: flex;
+  text-align: center;
+}
+
+.left {
+  width: 70%;
+}
+
+.right {
+  height: 400px;
+  width: 30%;
+}
+
+.balanceCont {
+  width: 50%;
+  background-color: lightcoral;
+  height: 100px;
+}
+
+.shortIconsGroup {
+  background-color: lightskyblue;
+  height: 100px;
+  width: 50%;
+}
+
+.one {
+  background-color: black;
+  height: 100px;
+  margin-left: 5px;
+  min-width: 300px;
+}
+
+.balanceIndicator {
+  background-color: rgb(255, 255, 255);
+  margin: 8px;
+  border-radius: 10px;
+  box-shadow: rgb(190, 190, 190) 0px 0px 8px;
+}
+
+.requestBlock {
+  min-height: 600px;
+}
+
+.amount {
+  background-color: rgb(255, 0, 170);
+  min-height: 200px;
+  box-shadow: none;
+}
+.smallIcons {
+  min-height: 200px;
+}
+.graph {
+  min-height: 200px;
+}
+.activity {
+  min-height: 200px;
+}
+.spin {
+  min-height: 200px;
+}
+
+.max-spacer {
+  padding: 0px 30px;
+  display: none;
+}
+
+@media only screen and (max-width: 700px) {
+  .right {
+    display: none;
+  }
+  .max-spacer {
+    display: block;
+  }
+}

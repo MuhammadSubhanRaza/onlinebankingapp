@@ -12,4 +12,10 @@ export class AddeditCustComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  imageStatus = false
+
+  setImageStatus(){
+    this.imageStatus = true;
+  }
+
 }

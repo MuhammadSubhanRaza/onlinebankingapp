@@ -1,1 +1,120 @@
-<p>addedit-cust works!</p>
+<div class="empStepper">
+    <div class="first">
+        <mat-icon aria-hidden="false" class="fieldIcons" aria-label="Example home icon">person</mat-icon>
+        <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker>
+            <mat-label>
+                First Name
+            </mat-label>
+            <input matInput required>
+        </mat-form-field>
+
+        <br>
+
+        <mat-icon aria-hidden="false" class="fieldIcons" aria-label="Example home icon">person</mat-icon>
+        <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker>
+            <mat-label>Last Name</mat-label>
+            <input matInput required>
+        </mat-form-field>
+
+        <br>
+
+        <mat-icon aria-hidden="false" class="fieldIcons" aria-label="Example home icon">home</mat-icon>
+        <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker>
+            <mat-label>Address</mat-label>
+            <input matInput required>
+        </mat-form-field>
+
+        <br>
+
+        <mat-icon aria-hidden="false" class="fieldIcons" aria-label="Example home icon">phone</mat-icon>
+        <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker>
+            <mat-label>Contact</mat-label>
+            <input matInput required>
+        </mat-form-field>
+
+        <br>
+
+                <mat-icon aria-hidden="false" class="fieldIcons" aria-label="Example home icon">email</mat-icon>
+                <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker>
+                    <mat-label>Email</mat-label>
+                    <input matInput required>
+                </mat-form-field>
+
+             <br>
+
+            
+            
+            <mat-icon aria-hidden="false" class="fieldIcons" aria-label="Example home icon">fingerprint</mat-icon>
+            <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker>
+                <mat-label>NIC</mat-label>
+                <input matInput required>
+            </mat-form-field>
+
+            <br>
+            
+            <mat-icon aria-hidden="false" class="fieldIcons" aria-label="Example home icon">engineering</mat-icon>
+            <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker>
+                <mat-label>Occupation</mat-label>
+                <input matInput required>
+            </mat-form-field>
+
+
+    </div>
+    <mat-divider [vertical]="true"></mat-divider>
+    <span class="spacer"></span>
+
+    <div class="second">
+        <div class="imageSection">
+            <div class="custImageHolder">
+                <img *ngIf="imageStatus" src="" alt="CustomerImage">
+            </div>
+            <input type="file" (click)="setImageStatus()">
+                
+            <br>
+        </div>
+        <br>
+        
+
+        <mat-icon aria-hidden="false" class="fieldIcons" aria-label="Example home icon">location_city</mat-icon>
+        <mat-form-field>
+            <mat-label>City</mat-label>
+            <mat-select>
+                <mat-option value="1">Angular</mat-option>
+                <mat-option value="2">Vue</mat-option>
+                <mat-option value="3">React</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        
+        <br>
+
+       
+        <mat-icon aria-hidden="false" class="fieldIcons" aria-label="Example home icon">event</mat-icon>
+        <mat-form-field>
+            <mat-label>Date Of Birth</mat-label>
+            <input matInput [matDatepicker]="myDatePicker">
+            <mat-datepicker-toggle [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
+            <mat-datepicker #myDatePicker></mat-datepicker>
+        </mat-form-field>
+
+        <br>
+        <mat-radio-group>
+            <mat-icon aria-hidden="false" class="fieldIcons" aria-label="Example home icon">wc</mat-icon>
+            <span class="spacer"></span>
+            <mat-radio-button color="primary" value="0">Male</mat-radio-button>
+            <span class="spacer"></span>
+            <mat-radio-button color="primary" value="1">Female</mat-radio-button>
+        </mat-radio-group>
+
+        <br><br>
+        <button mat-raised-button color="accent">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">cancel</mat-icon>
+            Cancel
+        </button>
+        <button mat-raised-button color="primary">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">save</mat-icon>
+            Save
+        </button>
+
+    </div>
+</div>

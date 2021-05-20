@@ -1,0 +1,28 @@
+
+<div>
+    <h2 mat-dialog-title>ADD BANK BRANCH</h2>
+    <mat-dialog-content>
+        <mat-form-field>
+            <mat-label>City</mat-label>
+            <mat-select>
+                <mat-option value="1">Angular</mat-option>
+                <mat-option value="2">Vue</mat-option>
+                <mat-option value="3">React</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+        <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker appearance="outline">
+            <mat-label>Branch Name</mat-label>
+            <input matInput required>
+        </mat-form-field>
+        <br>
+        <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker appearance="outline">
+            <mat-label>Address</mat-label>
+            <input matInput required>
+        </mat-form-field>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button mat-stroked-button color="warn" mat-dialog-close>Close</button>
+        <button mat-stroked-button color="primary" mat-dialog-close>Add</button>
+    </mat-dialog-actions>
+</div>

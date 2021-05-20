@@ -1,0 +1,47 @@
+.fieldIcons {
+  background-color: rgb(255, 196, 67);
+  padding: 5px;
+  border-radius: 50%;
+  color: white;
+}
+
+.spacer {
+  padding-left: 20px;
+}
+
+.mainContainer {
+  width: 50%;
+  margin: auto;
+}
+
+.mainContainer mat-form-field {
+  width: 90%;
+  margin-left: 10px;
+}
+
+button {
+  width: 45%;
+  margin: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .mainContainer {
+    width: 90%;
+  }
+}
+
+.custImageHolder {
+  height: 150px;
+  width: 150px;
+  background-color: rgb(209, 209, 209);
+}
+.custImageHolder img {
+  height: 150px;
+  width: 150px;
+}
+
+.imageSection {
+  text-align: right;
+  width: 150px;
+  margin: auto;
+}

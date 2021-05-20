@@ -1,0 +1,27 @@
+.mainContainer {
+  display: flex;
+}
+
+.CustomerInfo {
+  height: 400px;
+  width: 30%;
+  padding: 10px;
+  box-sizing: border-box;
+  /* box-shadow: gray 0px 5px 10px; */
+  border-right: solid 1px gray;
+}
+
+.AddAccountContainer {
+  background-color: red;
+}
+
+.fieldIcons {
+  background-color: rgb(255, 196, 67);
+  padding: 5px;
+  border-radius: 50%;
+  color: white;
+}
+
+.spacer {
+  padding-left: 20px;
+}

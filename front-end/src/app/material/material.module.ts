@@ -17,6 +17,12 @@ import { MatDatepickerModule } from '@angular/material/datepicker'
 import { MatNativeDateModule } from '@angular/material/core'
 import { MatRadioModule } from '@angular/material/radio'
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
+import { MatExpansionModule } from '@angular/material/expansion'
+import { MatButtonToggleModule } from '@angular/material/button-toggle'
+import { MatSortModule } from '@angular/material/sort'
+import { MatGridListModule } from '@angular/material/grid-list'
+import { MatCardModule } from '@angular/material/card'
+import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 const ItemsArray = [
   MatButtonModule,
@@ -35,7 +41,13 @@ const ItemsArray = [
   MatDatepickerModule,
   MatNativeDateModule,
   MatRadioModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+  MatExpansionModule,
+  MatButtonToggleModule,
+  MatSortModule,
+  MatGridListModule,
+  MatCardModule,
+  MatSnackBarModule
 ]
 
 
@@ -58,7 +70,13 @@ const ItemsArray = [
     MatDatepickerModule,
     MatNativeDateModule,
     MatRadioModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatExpansionModule,
+    MatButtonToggleModule,
+    MatSortModule,
+    MatGridListModule,
+    MatCardModule,
+    MatSnackBarModule
   ],
   exports:[
     ItemsArray

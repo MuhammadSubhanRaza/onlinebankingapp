@@ -3,6 +3,15 @@ table {
 }
 
 .addRecord {
-  text-align: right;
   margin: 5px 0px;
+  /* display: flex; */
+}
+
+.addRecord button {
+  height: 40px;
+  float: right;
+}
+
+span {
+  padding-right: 10px;
 }

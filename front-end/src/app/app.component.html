@@ -20,7 +20,7 @@
           <mat-icon aria-hidden="false" aria-label="Example home icon">person</mat-icon>
           <h4 class="mat-caption">Employees</h4>
         </button>
-        <button class="navButtons" (click)="sideNav.toggle()" mat-button>
+        <button class="navButtons" (click)="sideNav.toggle()" mat-button routerLink="customers">
           <mat-icon aria-hidden="false" aria-label="Example home icon">groups</mat-icon>
           <h4 class="mat-caption">Customers</h4>
         </button>
@@ -28,19 +28,27 @@
           <mat-icon aria-hidden="false" aria-label="Example home icon">list</mat-icon>
           <h4 class="mat-caption">transactions</h4>
         </button>
-        <button class="navButtons" (click)="sideNav.toggle()" mat-button>
+        <button class="navButtons" (click)="sideNav.toggle()" mat-button routerLink="branch">
           <mat-icon aria-hidden="false" aria-label="Example home icon">apartment</mat-icon>
           <h4 class="mat-caption">Branch</h4>
         </button>
-        <button class="navButtons" (click)="sideNav.toggle()" mat-button>
+        <button class="navButtons" (click)="sideNav.toggle()" mat-button routerLink="loanapplication">
           <mat-icon aria-hidden="false" aria-label="Example home icon">payments</mat-icon>
           <h4 class="mat-caption">Loan</h4>
         </button>
-        <button class="navButtons" (click)="sideNav.toggle()" mat-button>
+        <button class="navButtons" (click)="sideNav.toggle()" mat-button routerLink="bankaccount">
           <mat-icon aria-hidden="false" aria-label="Example home icon">money</mat-icon>
           <h4 class="mat-caption">Accounts</h4>
         </button>
-        <button class="navButtons" (click)="sideNav.toggle()" mat-button>
+        <button class="navButtons" (click)="sideNav.toggle()" mat-button routerLink="customerdashboard">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+          <h4 class="mat-caption">Dashboard</h4>
+        </button>
+        <button class="navButtons" (click)="sideNav.toggle()" mat-button routerLink="empsettings">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">settings</mat-icon>
+          <h4 class="mat-caption">Setting</h4>
+        </button>
+        <button class="navButtons" (click)="sideNav.toggle()" mat-button routerLink="CustSettingsComponent">
           <mat-icon aria-hidden="false" aria-label="Example home icon">settings</mat-icon>
           <h4 class="mat-caption">Setting</h4>
         </button>
