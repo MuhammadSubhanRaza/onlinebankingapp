@@ -41,6 +41,13 @@ empStepperContainer {
   box-sizing: border-box;
 }
 
+.second img {
+  height: 200px;
+  width: 200px;
+  border: 1px solid black;
+  display: block;
+}
+
 @media only screen and (max-width: 600px) {
   .empStepper {
     display: block;

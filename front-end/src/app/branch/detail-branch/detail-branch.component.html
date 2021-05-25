@@ -1,0 +1,38 @@
+
+<div class="dialogHeader">
+    <h3 mat-dialog-title>
+        <mat-icon aria-hidden="false" aria-label="Example home icon">apps</mat-icon>
+        BRANCH DETAILS
+    </h3>
+</div>
+<div>
+    <form>
+        <mat-dialog-content>
+            <br>
+            <table>
+                <tr>
+                    <th>Branch ID : </th>
+                    <td>{{branch.branId}}</td>
+                </tr>
+                <tr>
+                    <th>Branch Name : </th>
+                    <td>{{branch.branName}}</td>
+                </tr>
+                <tr>
+                    <th>Branch Address : </th>
+                    <td>{{branch.branAddress}}</td>
+                </tr>
+                <tr>
+                    <th>Branch City : </th>
+                    <td>{{branch.branchCity.cityName}}</td>
+                </tr>
+            </table>
+
+
+            <button mat-raised-button color="accent" mat-dialog-close>
+                <mat-icon aria-hidden="false" aria-label="Example home icon">cancel</mat-icon>
+                Close
+            </button>
+        </mat-dialog-content>
+    </form>
+</div>

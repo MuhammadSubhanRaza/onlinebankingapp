@@ -10,55 +10,64 @@
   <mat-sidenav-container class="myNav">
 
     <mat-sidenav class="navArea" mode="push" #sideNav>
+      <div class="sidenavheader">
+        <img src="./../assets/person.jpg" alt="">
+        <div>
+          <br>
+          <div class="mat-body-1">Muhammad Subhan Raza</div>
+          <div class="mat-caption">Saving Account</div>
+        </div>
+      </div>
       <div>
         <br>
         <button class="navButtons" mat-button (click)="sideNav.toggle()" routerLink="departments">
           <mat-icon aria-hidden="false" aria-label="Example home icon">apps</mat-icon>
-          <h4 class="mat-caption">Departments</h4>
+          <span class="btnSpacer"></span>Departments
         </button>
         <button class="navButtons" (click)="sideNav.toggle()" mat-button routerLink="employees">
           <mat-icon aria-hidden="false" aria-label="Example home icon">person</mat-icon>
-          <h4 class="mat-caption">Employees</h4>
+          <span class="btnSpacer"></span>Employees
         </button>
         <button class="navButtons" (click)="sideNav.toggle()" mat-button routerLink="customers">
           <mat-icon aria-hidden="false" aria-label="Example home icon">groups</mat-icon>
-          <h4 class="mat-caption">Customers</h4>
+          <span class="btnSpacer"></span>Customers
         </button>
-        <button class="navButtons" (click)="sideNav.toggle()" mat-button>
+        <button class="navButtons" (click)="sideNav.toggle()" mat-button routerLink="transaction">
           <mat-icon aria-hidden="false" aria-label="Example home icon">list</mat-icon>
-          <h4 class="mat-caption">transactions</h4>
+          <span class="btnSpacer"></span>transactions
         </button>
         <button class="navButtons" (click)="sideNav.toggle()" mat-button routerLink="branch">
           <mat-icon aria-hidden="false" aria-label="Example home icon">apartment</mat-icon>
-          <h4 class="mat-caption">Branch</h4>
+          <span class="btnSpacer"></span>Branch
         </button>
         <button class="navButtons" (click)="sideNav.toggle()" mat-button routerLink="loanapplication">
           <mat-icon aria-hidden="false" aria-label="Example home icon">payments</mat-icon>
-          <h4 class="mat-caption">Loan</h4>
+          <span class="btnSpacer"></span>Loan
         </button>
         <button class="navButtons" (click)="sideNav.toggle()" mat-button routerLink="bankaccount">
           <mat-icon aria-hidden="false" aria-label="Example home icon">money</mat-icon>
-          <h4 class="mat-caption">Accounts</h4>
+          <span class="btnSpacer"></span>Accounts
         </button>
         <button class="navButtons" (click)="sideNav.toggle()" mat-button routerLink="customerdashboard">
           <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
-          <h4 class="mat-caption">Dashboard</h4>
+          <span class="btnSpacer"></span>Dashboard
         </button>
         <button class="navButtons" (click)="sideNav.toggle()" mat-button routerLink="empsettings">
           <mat-icon aria-hidden="false" aria-label="Example home icon">settings</mat-icon>
-          <h4 class="mat-caption">Setting</h4>
+          <span class="btnSpacer"></span>Setting
         </button>
         <button class="navButtons" (click)="sideNav.toggle()" mat-button routerLink="CustSettingsComponent">
           <mat-icon aria-hidden="false" aria-label="Example home icon">settings</mat-icon>
-          <h4 class="mat-caption">Setting</h4>
+          <span class="btnSpacer"></span>Setting
         </button>
+
+
       </div>
     </mat-sidenav>
 
 
 
-    <!-- -- SIDE NAV CONTENT -- -->
-
+    
 
 
 
@@ -66,7 +75,7 @@
 
 
 
-      <!-- -- TOOLBAR-- -->
+      
       <mat-toolbar color="primary">
         <img class="imgLogo" src="./../assets/logo2.png" alt="">
         <div>
@@ -96,8 +105,7 @@
 
 
 
-      <!-- -- NAV BUTTON BAR -- -->
-
+      
 
 
       <mat-toolbar class="navBtnBar">
@@ -111,12 +119,15 @@
 
       <div class="appication-content">
         <router-outlet></router-outlet>
+        
       </div>
-
+      <app-footer></app-footer>
+      
     </mat-sidenav-content>
   </mat-sidenav-container>
 
   
+
 
   <!-- <app-login></app-login> -->
 

@@ -1,0 +1,13 @@
+.mainContainer {
+  width: 70%;
+  margin: auto;
+}
+mat-form-field {
+  width: 80%;
+}
+button {
+  width: 20%;
+}
+.spacer {
+  padding: 0px 20px;
+}

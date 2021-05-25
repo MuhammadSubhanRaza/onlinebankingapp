@@ -1,31 +1,58 @@
 
 <div>
     <div class="mat-elevation-z8">
-        <table mat-table [dataSource]="dataSource">
+        <table mat-table [dataSource]="dataSource" matSort>
 
-            <!-- Position Column -->
-            <ng-container matColumnDef="position">
-                <th mat-header-cell *matHeaderCellDef> No. </th>
-                <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+            <ng-container matColumnDef="custId">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef> # </th>
+                <td mat-cell *matCellDef="let element"> {{element.custId}} </td>
+            </ng-container>
+            <ng-container matColumnDef="custImagePath">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let element"> <img class="tableUserImage" [src]="imagePath+element.custImagePath" alt="">
+                </td>
+            </ng-container>
+            
+            <ng-container matColumnDef="custName">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef> </th>
+                <td mat-cell *matCellDef="let element"> {{element.custFirstName+" "+element.custLastName}} </td>
+            </ng-container>
+            
+            <ng-container matColumnDef="custGender">
+                <th mat-header-cell *matHeaderCellDef> Gender </th>
+                <td mat-cell *matCellDef="let element"> {{element.custGender?'Female':'Male'}} </td>
+            </ng-container>
+            
+            <ng-container matColumnDef="custContact">
+                <th mat-header-cell *matHeaderCellDef> Contact </th>
+                <td mat-cell *matCellDef="let element"> {{element.custContact}} </td>
+            </ng-container>
+            
+            <ng-container matColumnDef="custEmail">
+                <th mat-header-cell *matHeaderCellDef> Email </th>
+                <td mat-cell *matCellDef="let element"> {{element.custEmail}} </td>
+            </ng-container>
+            
+            <ng-container matColumnDef="custAddress">
+                <th mat-header-cell *matHeaderCellDef> Address </th>
+                <td mat-cell *matCellDef="let element"> {{element.custAddress}} </td>
+            </ng-container>
+            
+            <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef> Actions </th>
+                <td mat-cell *matCellDef="let element">
+                    <button mat-button color="primary" (click)="detailRecord(element)">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon">visibility</mat-icon>
+                    </button>
+                    <button mat-button color="primary" (click)="updateRecord(element)">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon">edit</mat-icon>
+                    </button>
+                    <button mat-button color="warn" (click)="deleteRecord(element)">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon">delete</mat-icon>
+                    </button>
+                </td>
             </ng-container>
 
-            <!-- Name Column -->
-            <ng-container matColumnDef="name">
-                <th mat-header-cell *matHeaderCellDef> Name </th>
-                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-            </ng-container>
-
-            <!-- Weight Column -->
-            <ng-container matColumnDef="weight">
-                <th mat-header-cell *matHeaderCellDef> Weight </th>
-                <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-            </ng-container>
-
-            <!-- Symbol Column -->
-            <ng-container matColumnDef="symbol">
-                <th mat-header-cell *matHeaderCellDef> Symbol </th>
-                <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-            </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

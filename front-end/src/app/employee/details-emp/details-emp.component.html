@@ -1,0 +1,110 @@
+
+<mat-dialog-content>
+<div class="mainContainer">
+    <div class="first">
+        <br><br>
+        <img [src]="imagePath" alt="">
+    </div>
+    <div class="second">
+        <h2>
+            <mat-icon aria-hidden="false" aria-label="Example home icon">person</mat-icon>
+            Employee Details</h2>
+
+        <mat-tab-group class="tabGroup">
+            <mat-tab label="Personal Information"> 
+                <table>
+                    <tr>
+                        <th>
+                            <mat-icon aria-hidden="false" aria-label="Example home icon">fingerprint</mat-icon>
+                            ID
+                        </th>
+                        <td>{{empDetails.empId}}</td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <mat-icon aria-hidden="false" aria-label="Example home icon">person</mat-icon>
+                            First Name
+                        </th>
+                        <td>{{empDetails.empFirstName}}</td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <mat-icon aria-hidden="false" aria-label="Example home icon">person</mat-icon>
+                            Last Name</th>
+                        <td>{{empDetails.empLastName}}</td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <mat-icon aria-hidden="false" aria-label="Example home icon">wc</mat-icon>
+                            Gender</th>
+                        <td>{{empDetails.empGender}}</td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <mat-icon aria-hidden="false" aria-label="Example home icon">event</mat-icon>
+                            Date Of Birth</th>
+                        <td>{{empDetails.empDateOfBirth}}</td>
+                    </tr>
+                
+                </table>
+            </mat-tab>
+            <mat-tab label="Proffessional Information"> 
+                <table>
+                    <tr>
+                        <th>
+                            <mat-icon aria-hidden="false" aria-label="Example home icon">phone</mat-icon>
+                            Contact</th>
+                        <td>{{empDetails.empContact}}</td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <mat-icon aria-hidden="false" aria-label="Example home icon">email</mat-icon>
+                            Email</th>
+                        <td>{{empDetails.empEmail}}</td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <mat-icon aria-hidden="false" aria-label="Example home icon">school</mat-icon>
+                            Qualification</th>
+                        <td>{{empDetails.empQualification}}</td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <mat-icon aria-hidden="false" aria-label="Example home icon">grid_view</mat-icon>
+                            Department</th>
+                        <td>{{empDetails.empDepartmentNavigation.deptName}}</td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <mat-icon aria-hidden="false" aria-label="Example home icon">attach_money</mat-icon>
+                            Salary</th>
+                        <td>Raza</td>
+                    </tr>
+                </table>
+            </mat-tab>
+            <mat-tab label="Account Information">
+                <table>
+                    <tr>
+                        <th>
+                            <mat-icon aria-hidden="false" aria-label="Example home icon">person</mat-icon>
+                            User Name</th>
+                        <td>{{empDetails.empUserName}}</td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <mat-icon aria-hidden="false" aria-label="Example home icon">password</mat-icon>
+                            Password</th>
+                        <td>{{empDetails.empPassword}}</td>
+                    </tr>
+                </table>
+            </mat-tab>
+        </mat-tab-group>
+        <br>
+        <button mat-raised-button color="warn" mat-dialog-close>
+            <mat-icon aria-hidden="false" aria-label="Example home icon">cancel</mat-icon>
+            Close
+        </button>
+    </div>
+
+</div>
+</mat-dialog-content>

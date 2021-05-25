@@ -1,0 +1,14 @@
+.panelHeader {
+}
+
+table {
+  width: 100%;
+}
+table h6 {
+  font-weight: 600;
+}
+
+.panelBorder {
+  background-color: rgb(162, 81, 255);
+  height: 2px;
+}

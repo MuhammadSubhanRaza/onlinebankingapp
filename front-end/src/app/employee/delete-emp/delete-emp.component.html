@@ -1,0 +1,25 @@
+
+<mat-dialog-content>
+    <div class="mainContainer">
+
+        <img [src]="imageUrl" alt="">
+        <h2>{{employeeRecord.empFirstName+" "+employeeRecord.empLastName}}</h2>
+        <p>{{employeeRecord.empDepartmentNavigation.deptName}}</p>
+        <br>
+        <h5 >{{employeeRecord.empEmail}}</h5>
+        <h5>{{employeeRecord.empContact}}</h5>
+        <br>
+        <p><b>Do you really want to delete this record ?</b></p>
+        <br><br>
+        <button mat-button color="warn" mat-dialog-close>
+            <mat-icon aria-hidden="false" aria-label="Example home icon">cancel</mat-icon>
+            Close
+        </button>
+        <span class="spacer"></span>
+        <button mat-button color="primary" (click)="onSubmit()" mat-dialog-close>
+            <mat-icon aria-hidden="false" aria-label="Example home icon">delete_forever</mat-icon>
+            Delete
+        </button>
+    </div>
+</mat-dialog-content>
+

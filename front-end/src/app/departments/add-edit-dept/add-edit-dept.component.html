@@ -1,5 +1,8 @@
 <div>
-    <h2 mat-dialog-title>ADD / EDIT DEPARTMENT</h2>
+    <h3 mat-dialog-title>
+        <mat-icon aria-hidden="false" aria-label="Example home icon">apps</mat-icon>
+        ADD | EDIT DEPARTMENT
+    </h3>
     <form [formGroup]="departmentForm" (ngSubmit)="onSubmit()">
         <mat-dialog-content>
             <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker appearance="outline">
@@ -7,14 +10,16 @@
                 <input formControlName="txtDepartmentName" [(ngModel)]="departmentName" matInput required>
                 <mat-hint align="end">Min 5 Character</mat-hint>
             </mat-form-field>
-            <button mat-stroked-button color="warn" mat-dialog-close>Close</button>
-            <button mat-stroked-button color="primary" mat-dialog-close type="submit">Add</button>
+            <button mat-stroked-button color="warn" mat-dialog-close>
+                <mat-icon aria-hidden="false" aria-label="Example home icon">cancel</mat-icon>
+                Close
+            </button>
+            <span class="spacer"></span>
+            <button mat-stroked-button color="primary" [disabled]="!departmentForm.valid" mat-dialog-close type="submit">
+                <mat-icon aria-hidden="false" aria-label="Example home icon">save</mat-icon>
+                Save
+            </button>
         </mat-dialog-content>
     </form>
 </div>
 
-<!-- formControlName="txtDepartmentName" -->
-<!-- value="{{department.deptName}}" -->
-<!-- [formGroup]="departmentForm" (ngSubmit)="onSubmit()" -->
-<!-- type="submit" -->
-<!-- value="{{departmentName}}" -->

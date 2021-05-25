@@ -1,0 +1,32 @@
+div {
+  width: 400px;
+  text-align: center;
+}
+
+button {
+  width: 45%;
+}
+
+.dialogHeader {
+  color: blueviolet;
+  border-bottom: solid 1px blueviolet;
+}
+
+.dialogHeader h3 {
+  letter-spacing: 5px;
+}
+
+.spacer {
+  padding: 0px 10px;
+}
+
+h1,
+h4 {
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+h4 {
+  color: rgb(105, 105, 105);
+}

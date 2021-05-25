@@ -79,24 +79,55 @@ mat-grid-tile {
   box-shadow: rgb(190, 190, 190) 0px 0px 8px;
 }
 
-.requestBlock {
-  min-height: 600px;
+.verticle-spacer {
 }
 
 .amount {
-  background-color: rgb(255, 0, 170);
+  /* background-color: rgb(118, 0, 196); */
+  background-color: rgb(0, 168, 173);
   min-height: 200px;
   box-shadow: none;
+  text-align: left;
+  padding: 25px;
+  box-sizing: border-box;
+  color: rgb(255, 255, 255);
+}
+.amount h2 {
+  font-size: 2rem;
 }
 .smallIcons {
   min-height: 200px;
+  box-sizing: border-box;
+  box-shadow: none;
+  background-color: transparent;
 }
+
+.smallIcons button {
+  width: 45%;
+  margin: 10px;
+  border-radius: 10px;
+  padding: 8px;
+}
+
 .graph {
   min-height: 200px;
+  text-align: left;
 }
 .activity {
   min-height: 200px;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: right;
 }
+
+.activity .activity-title {
+  float: left;
+}
+
+.activity button {
+  float: right;
+}
+
 .spin {
   min-height: 200px;
 }
@@ -113,4 +144,65 @@ mat-grid-tile {
   .max-spacer {
     display: block;
   }
+}
+
+.requestBlock {
+  min-height: 600px;
+  box-sizing: border-box;
+  padding: 20px;
+}
+.requestBlock table {
+  text-align: left;
+  width: 100%;
+}
+.requestBlock table img {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+}
+.requestBlock table h3 {
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+}
+
+table td {
+  padding: 0;
+  margin: 0;
+}
+
+.card-block {
+  box-sizing: border-box;
+  border-top: 1px solid gray;
+  overflow: hidden;
+  margin-top: 20px;
+}
+.card-block .seeAllBtn {
+  float: right;
+  margin: 10px 0px;
+}
+
+.card-block h3 {
+  font-weight: 500;
+  float: left;
+  padding: 10px 0px;
+}
+
+.card-block img {
+  width: 300px;
+}
+
+.getAllBtn {
+  margin-top: 10px;
+  background-color: rgb(255, 206, 173);
+  width: 80%;
+}
+.upgrade-icon {
+  color: rgb(230, 0, 77);
+  font-size: 1.5rem;
+}
+
+.upgrade-block {
+  margin-top: 10px;
+  text-align: left;
 }

@@ -1,3 +1,15 @@
 table {
   width: 100%;
 }
+
+.addRecord {
+  text-align: right;
+  margin: 5px 0px;
+}
+
+.tableUserImage {
+  height: 40px;
+  width: 40px;
+  margin-top: 5px;
+  border-radius: 50%;
+}

@@ -1,32 +1,56 @@
 <div>
     <div class="addRecord">
-        <button mat-raised-button color="accent" (click)="openDialog()">Add new Branch</button>
+        <span>
+            <mat-icon aria-hidden="false" aria-label="Example home icon">search</mat-icon>
+        </span>
+        <mat-form-field (keyup)="filterTable($event.target.value)" class="example-full-width">
+            <mat-label>Filter</mat-label>
+            <input matInput>
+        </mat-form-field>
+        <button mat-raised-button color="accent" (click)="openDialog()">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">add_circle</mat-icon>
+            Add New Branch
+        </button>
     </div>
     <div class="mat-elevation-z8">
-        <table mat-table [dataSource]="dataSource">
+        <table mat-table [dataSource]="dataSource" matSort>
 
-            <!-- Position Column -->
-            <ng-container matColumnDef="position">
-                <th mat-header-cell *matHeaderCellDef> No. </th>
-                <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+            
+            <ng-container matColumnDef="branId">
+                <th mat-header-cell  mat-sort-header *matHeaderCellDef> Branch ID </th>
+                <td mat-cell *matCellDef="let element"> {{element.branId}} </td>
             </ng-container>
 
-            <!-- Name Column -->
-            <ng-container matColumnDef="name">
-                <th mat-header-cell *matHeaderCellDef> Name </th>
-                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            
+            <ng-container matColumnDef="branName">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header > Branch Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.branName}} </td>
             </ng-container>
 
-            <!-- Weight Column -->
-            <ng-container matColumnDef="weight">
-                <th mat-header-cell *matHeaderCellDef> Weight </th>
-                <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+            
+            <ng-container matColumnDef="branAddress">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header > Address </th>
+                <td mat-cell *matCellDef="let element"> {{element.branAddress}} </td>
             </ng-container>
 
-            <!-- Symbol Column -->
-            <ng-container matColumnDef="symbol">
-                <th mat-header-cell *matHeaderCellDef> Symbol </th>
-                <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+            <ng-container matColumnDef="branchCity">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> City </th>
+                <td mat-cell *matCellDef="let element"> {{element.branchCity.cityName}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef> Actions </th>
+                <td mat-cell *matCellDef="let element">
+                    <button mat-button color="primary" (click)="detailRecord(element)">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon">visibility</mat-icon>
+                    </button>
+                    <button mat-button color="primary" (click)="updateRecord(element)">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon">edit</mat-icon>
+                    </button>
+                    <button mat-button color="warn" (click)="deleteRecord(element)">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon">delete</mat-icon>
+                    </button>
+                </td>
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

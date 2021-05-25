@@ -1,68 +1,94 @@
-
 <div class="mainContainer">
-    <mat-icon aria-hidden="false" class="fieldIcons" aria-label="Example home icon">subject</mat-icon>
-    <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker>
-        <mat-label>
-            Subject
-        </mat-label>
-        <input matInput required>
-    </mat-form-field>
 
-    <br><br>
+    <div class="instructionContainer">
+        <h2>INSTRUCTIONS</h2>
+        <mat-list role="list">
+            <mat-list-item role="listitem">
+                <mat-icon aria-hidden="false" class="iconPoint" aria-label="Example home icon">label_important</mat-icon>
+                Fixed Accounts are not titled for the Loan
+            </mat-list-item>
+            <mat-list-item role="listitem">
+                <mat-icon aria-hidden="false" class="iconPoint" aria-label="Example home icon">label_important</mat-icon>
+                With less than 25000 PKR balance can not apply for Max Loan
+            </mat-list-item>
+            <mat-list-item role="listitem">
+                <mat-icon aria-hidden="false" class="iconPoint" aria-label="Example home icon">label_important</mat-icon>
+                Approving loan might take up to 5 days or a week
+            </mat-list-item>
+            <mat-list-item role="listitem">
+                <mat-icon class="iconPoint" aria-hidden="false" aria-label="Example home icon">
+                    label_important
+                </mat-icon>
+                Without paying backthe previous loans, new loans are not entertained
+            </mat-list-item>
+        </mat-list>
 
-    <mat-icon aria-hidden="false" class="fieldIcons" aria-label="Example home icon">article</mat-icon>
-    <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker>
-        <mat-label>
-            Body
-        </mat-label>
-        <input matInput required>
-    </mat-form-field>
+    </div>
 
-    <br><br>
+    <div class="fieldsContainer">
+        <mat-icon aria-hidden="false" class="fieldIcons" aria-label="Example home icon">subject</mat-icon>
+        <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker>
+            <mat-label>
+                Subject
+            </mat-label>
+            <input matInput required>
+        </mat-form-field>
 
-    <mat-icon aria-hidden="false" class="fieldIcons" aria-label="Example home icon">attach_money</mat-icon>
-    <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker>
-        <mat-label>
-            Amount
-        </mat-label>
-        <input matInput required>
-    </mat-form-field>
+        <br><br>
 
-    <br><br>
+        <mat-icon aria-hidden="false" class="fieldIcons" aria-label="Example home icon">article</mat-icon>
+        <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker>
+            <mat-label>
+                Body
+            </mat-label>
+            <input matInput required>
+        </mat-form-field>
 
-    <mat-icon aria-hidden="false" class="fieldIcons" aria-label="Example home icon">filter_list</mat-icon>
-    
-    <mat-form-field>
-        <mat-label>Reason</mat-label>
-        <mat-select>
-            <mat-option value="business">Business</mat-option>
-            <mat-option value="education">Education</mat-option>
-            <mat-option value="personal">Personal</mat-option>
-            <mat-option value="mortgage">Mortgage</mat-option>
-            <mat-option value="others">Others</mat-option>
-        </mat-select>
-    </mat-form-field>
+        <br><br>
 
-    <br><br>
+        <mat-icon aria-hidden="false" class="fieldIcons" aria-label="Example home icon">attach_money</mat-icon>
+        <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker>
+            <mat-label>
+                Amount
+            </mat-label>
+            <input matInput required>
+        </mat-form-field>
 
-    <mat-icon aria-hidden="false" class="fieldIcons" aria-label="Example home icon">tag</mat-icon>
-    <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker>
-        <mat-label>
-            Number Of Installments
-        </mat-label>
-        <input matInput required>
-    </mat-form-field>
+        <br><br>
 
-    <br><br>
-    <button mat-raised-button color="accent">
-        <mat-icon aria-hidden="false" aria-label="Example home icon">cancel</mat-icon>
-        Cancel
-    </button>
-    <button mat-raised-button color="primary">
-        <mat-icon aria-hidden="false" aria-label="Example home icon">save</mat-icon>
-        Save
-    </button>
+        <mat-icon aria-hidden="false" class="fieldIcons" aria-label="Example home icon">filter_list</mat-icon>
+
+        <mat-form-field>
+            <mat-label>Reason</mat-label>
+            <mat-select>
+                <mat-option value="business">Business</mat-option>
+                <mat-option value="education">Education</mat-option>
+                <mat-option value="personal">Personal</mat-option>
+                <mat-option value="mortgage">Mortgage</mat-option>
+                <mat-option value="others">Others</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <br><br>
+
+        <mat-icon aria-hidden="false" class="fieldIcons" aria-label="Example home icon">tag</mat-icon>
+        <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker>
+            <mat-label>
+                Number Of Installments
+            </mat-label>
+            <input matInput required>
+        </mat-form-field>
+
+        <br><br>
+        <button mat-raised-button color="accent">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">cancel</mat-icon>
+            Cancel
+        </button>
+        <button mat-raised-button color="primary">
+            Send
+            <mat-icon aria-hidden="false" aria-label="Example home icon">send</mat-icon>
+        </button>
+
+    </div>
 
 </div>
-
-

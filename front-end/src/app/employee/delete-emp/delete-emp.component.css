@@ -1,0 +1,24 @@
+.mainContainer {
+  text-align: center;
+  width: 300px;
+}
+
+img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: solid 5px rgb(255, 205, 69);
+  padding: 10px;
+}
+
+h2,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+h5 {
+  padding: 0;
+  margin: 0;
+  font-size: 0.9rem;
+}

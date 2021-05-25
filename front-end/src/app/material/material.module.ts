@@ -23,6 +23,8 @@ import { MatSortModule } from '@angular/material/sort'
 import { MatGridListModule } from '@angular/material/grid-list'
 import { MatCardModule } from '@angular/material/card'
 import { MatSnackBarModule } from '@angular/material/snack-bar'
+import { MatProgressBarModule } from '@angular/material/progress-bar'
+import { MatTabsModule } from '@angular/material/tabs'
 
 const ItemsArray = [
   MatButtonModule,
@@ -47,7 +49,9 @@ const ItemsArray = [
   MatSortModule,
   MatGridListModule,
   MatCardModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+  MatProgressBarModule,
+  MatTabsModule
 ]
 
 
@@ -76,7 +80,9 @@ const ItemsArray = [
     MatSortModule,
     MatGridListModule,
     MatCardModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatProgressBarModule,
+    MatTabsModule
   ],
   exports:[
     ItemsArray

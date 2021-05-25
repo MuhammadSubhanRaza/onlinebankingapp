@@ -22,14 +22,14 @@ namespace BankingBackEndAPI.Controllers
 
         // GET: api/Departments
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Department>>> GetDepartments()
+        public async Task<ActionResult<IEnumerable<Departments>>> GetDepartments()
         {
             return await _context.Departments.ToListAsync();
         }
 
         // GET: api/Departments/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Department>> GetDepartment(byte id)
+        public async Task<ActionResult<Departments>> GetDepartment(byte id)
         {
             var department = await _context.Departments.FindAsync(id);
 
@@ -77,7 +77,7 @@ namespace BankingBackEndAPI.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Department>> PostDepartment(Department department)
+        public async Task<ActionResult<Department>> PostDepartment(Departments department)
         {
             _context.Departments.Add(department);
             await _context.SaveChangesAsync();
@@ -87,11 +87,11 @@ namespace BankingBackEndAPI.Controllers
 
         // DELETE: api/Departments/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Department>> DeleteDepartment(byte id)
+        public async Task<ActionResult<Departments>> DeleteDepartment(byte id)
         {
             var department = await _context.Departments.FindAsync(id);
             if (department == null)
-            {
+            {       
                 return NotFound();
             }
 

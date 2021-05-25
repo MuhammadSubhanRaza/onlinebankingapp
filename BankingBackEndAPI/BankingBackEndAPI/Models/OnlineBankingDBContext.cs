@@ -2,7 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-#nullable disable
+// Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
+// If you have enabled NRTs for your project, then un-comment the following line:
+// #nullable disable
 
 namespace BankingBackEndAPI.Models
 {
@@ -17,37 +19,33 @@ namespace BankingBackEndAPI.Models
         {
         }
 
-        public virtual DbSet<Account> Accounts { get; set; }
-        public virtual DbSet<AccountsType> AccountsTypes { get; set; }
-        public virtual DbSet<Branch> Branches { get; set; }
-        public virtual DbSet<City> Cities { get; set; }
-        public virtual DbSet<Complaint> Complaints { get; set; }
-        public virtual DbSet<Customer> Customers { get; set; }
-        public virtual DbSet<Department> Departments { get; set; }
-        public virtual DbSet<Employee> Employees { get; set; }
-        public virtual DbSet<Loan> Loans { get; set; }
-        public virtual DbSet<LoanApplication> LoanApplications { get; set; }
-        public virtual DbSet<Transaction> Transactions { get; set; }
+        public virtual DbSet<Account> Account { get; set; }
+        public virtual DbSet<AccountsType> AccountsType { get; set; }
+        public virtual DbSet<Branch> Branch { get; set; }
+        public virtual DbSet<City> City { get; set; }
+        public virtual DbSet<Complaints> Complaints { get; set; }
+        public virtual DbSet<Customer> Customer { get; set; }
+        public virtual DbSet<Departments> Departments { get; set; }
+        public virtual DbSet<Employees> Employees { get; set; }
+        public virtual DbSet<Loan> Loan { get; set; }
+        public virtual DbSet<LoanApplications> LoanApplications { get; set; }
+        public virtual DbSet<Transactions> Transactions { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=.;Database=OnlineBankingDB; Trusted_Connection=True;");
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+                optionsBuilder.UseSqlServer("Server=.;Database=OnlineBankingDB;Trusted_Connection=True;");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
-
             modelBuilder.Entity<Account>(entity =>
             {
                 entity.HasKey(e => e.AccId)
                     .HasName("PK__Account__91CBC3788F2457C1");
-
-                entity.ToTable("Account");
 
                 entity.Property(e => e.AccAccountCode)
                     .IsRequired()
@@ -68,19 +66,19 @@ namespace BankingBackEndAPI.Models
                     .IsUnicode(false);
 
                 entity.HasOne(d => d.AccBranch)
-                    .WithMany(p => p.Accounts)
+                    .WithMany(p => p.Account)
                     .HasForeignKey(d => d.AccBranchId)
                     .OnDelete(DeleteBehavior.SetNull)
                     .HasConstraintName("FK__Account__AccBran__33D4B598");
 
                 entity.HasOne(d => d.AccCustomer)
-                    .WithMany(p => p.Accounts)
+                    .WithMany(p => p.Account)
                     .HasForeignKey(d => d.AccCustomerId)
                     .OnDelete(DeleteBehavior.SetNull)
                     .HasConstraintName("FK__Account__AccCust__31EC6D26");
 
                 entity.HasOne(d => d.AccTypeNavigation)
-                    .WithMany(p => p.Accounts)
+                    .WithMany(p => p.Account)
                     .HasForeignKey(d => d.AccType)
                     .OnDelete(DeleteBehavior.SetNull)
                     .HasConstraintName("FK__Account__AccType__32E0915F");
@@ -90,8 +88,6 @@ namespace BankingBackEndAPI.Models
             {
                 entity.HasKey(e => e.ActypeId)
                     .HasName("PK__Accounts__CDF3CB42FB46650D");
-
-                entity.ToTable("AccountsType");
 
                 entity.Property(e => e.ActypeId).ValueGeneratedOnAdd();
 
@@ -106,8 +102,6 @@ namespace BankingBackEndAPI.Models
                 entity.HasKey(e => e.BranId)
                     .HasName("PK__Branch__852886C914F64477");
 
-                entity.ToTable("Branch");
-
                 entity.Property(e => e.BranAddress).HasMaxLength(150);
 
                 entity.Property(e => e.BranName)
@@ -115,7 +109,7 @@ namespace BankingBackEndAPI.Models
                     .HasMaxLength(150);
 
                 entity.HasOne(d => d.BranchCity)
-                    .WithMany(p => p.Branches)
+                    .WithMany(p => p.Branch)
                     .HasForeignKey(d => d.BranchCityId)
                     .OnDelete(DeleteBehavior.SetNull)
                     .HasConstraintName("FK__Branch__BranchCi__49C3F6B7");
@@ -123,14 +117,12 @@ namespace BankingBackEndAPI.Models
 
             modelBuilder.Entity<City>(entity =>
             {
-                entity.ToTable("City");
-
                 entity.Property(e => e.CityName)
                     .HasMaxLength(70)
                     .IsUnicode(false);
             });
 
-            modelBuilder.Entity<Complaint>(entity =>
+            modelBuilder.Entity<Complaints>(entity =>
             {
                 entity.HasKey(e => e.CompId)
                     .HasName("PK__Complain__AD362A16AF45D918");
@@ -153,15 +145,13 @@ namespace BankingBackEndAPI.Models
                 entity.HasKey(e => e.CustId)
                     .HasName("PK__Customer__049E3AA9E5785EFE");
 
-                entity.ToTable("Customer");
-
                 entity.Property(e => e.CustAddress).HasMaxLength(150);
 
                 entity.Property(e => e.CustContact).HasMaxLength(15);
 
                 entity.Property(e => e.CustDob)
-                    .HasColumnType("date")
-                    .HasColumnName("CustDOB");
+                    .HasColumnName("CustDOB")
+                    .HasColumnType("date");
 
                 entity.Property(e => e.CustEmail).HasMaxLength(35);
 
@@ -170,25 +160,29 @@ namespace BankingBackEndAPI.Models
                     .HasMaxLength(70)
                     .IsUnicode(false);
 
+                entity.Property(e => e.CustImagePath)
+                    .HasMaxLength(500)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.CustLastName)
                     .IsRequired()
                     .HasMaxLength(70)
                     .IsUnicode(false);
 
                 entity.Property(e => e.CustNic)
-                    .HasMaxLength(25)
-                    .HasColumnName("CustNIC");
+                    .HasColumnName("CustNIC")
+                    .HasMaxLength(25);
 
                 entity.Property(e => e.CustOccupation).HasMaxLength(100);
 
                 entity.HasOne(d => d.CustCityNavigation)
-                    .WithMany(p => p.Customers)
+                    .WithMany(p => p.Customer)
                     .HasForeignKey(d => d.CustCity)
                     .OnDelete(DeleteBehavior.SetNull)
                     .HasConstraintName("FK__Customer__CustCi__2D27B809");
             });
 
-            modelBuilder.Entity<Department>(entity =>
+            modelBuilder.Entity<Departments>(entity =>
             {
                 entity.HasKey(e => e.DeptId)
                     .HasName("PK__Departme__014881AE4ED75BD4");
@@ -201,7 +195,7 @@ namespace BankingBackEndAPI.Models
                     .IsUnicode(false);
             });
 
-            modelBuilder.Entity<Employee>(entity =>
+            modelBuilder.Entity<Employees>(entity =>
             {
                 entity.HasKey(e => e.EmpId)
                     .HasName("PK__Employee__AF2DBB999BFC9289");
@@ -215,6 +209,10 @@ namespace BankingBackEndAPI.Models
                 entity.Property(e => e.EmpFirstName)
                     .IsRequired()
                     .HasMaxLength(70)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.EmpImagePath)
+                    .HasMaxLength(500)
                     .IsUnicode(false);
 
                 entity.Property(e => e.EmpLastName)
@@ -246,20 +244,18 @@ namespace BankingBackEndAPI.Models
 
             modelBuilder.Entity<Loan>(entity =>
             {
-                entity.ToTable("Loan");
-
                 entity.Property(e => e.LoanAmountTransffered).HasColumnType("money");
 
                 entity.Property(e => e.LoanDateOfTransfer).HasColumnType("date");
 
                 entity.HasOne(d => d.LoanCustomer)
-                    .WithMany(p => p.Loans)
+                    .WithMany(p => p.Loan)
                     .HasForeignKey(d => d.LoanCustomerId)
                     .OnDelete(DeleteBehavior.SetNull)
                     .HasConstraintName("FK__Loan__LoanCustom__38996AB5");
             });
 
-            modelBuilder.Entity<LoanApplication>(entity =>
+            modelBuilder.Entity<LoanApplications>(entity =>
             {
                 entity.HasKey(e => e.LoanAppId)
                     .HasName("PK__LoanAppl__7A516B7AD4DA566F");
@@ -285,7 +281,7 @@ namespace BankingBackEndAPI.Models
                     .HasConstraintName("FK__LoanAppli__LoanA__3B75D760");
             });
 
-            modelBuilder.Entity<Transaction>(entity =>
+            modelBuilder.Entity<Transactions>(entity =>
             {
                 entity.HasKey(e => e.TranId)
                     .HasName("PK__Transact__F70897C9870EDA66");

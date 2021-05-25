@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit} from '@angular/core';
-import { FormGroup,FormControl } from '@angular/forms'
+import { FormGroup,FormControl,Validator, Validators, FormBuilder } from '@angular/forms'
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ShowDeptComponent } from '../show-dept/show-dept.component';
 import { SharedService } from './../../shared.service'
@@ -20,7 +20,9 @@ export class AddEditDeptComponent implements OnInit {
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data:any,
-  private service : SharedService) {
+  private service : SharedService,
+  private formBuilder:FormBuilder
+  ) {
     if(this.data==null){
       this.departmentId = 0
       this.departmentName = ''
@@ -34,8 +36,8 @@ export class AddEditDeptComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.departmentForm = new FormGroup({
-      txtDepartmentName : new FormControl()
+    this.departmentForm = this.formBuilder.group({
+      txtDepartmentName : ['',Validators.required]
     });
     
   }
@@ -57,7 +59,6 @@ export class AddEditDeptComponent implements OnInit {
       this.service.addDepartment(val).subscribe(data=>{
         this.service.changeState()
       })
-      console.log(val)
     }
   }
 

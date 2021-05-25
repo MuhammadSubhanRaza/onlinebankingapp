@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 
-#nullable disable
+// Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
+// If you have enabled NRTs for your project, then un-comment the following line:
+// #nullable disable
 
 namespace BankingBackEndAPI.Models
 {
-    public partial class Employee
+    public partial class Employees
     {
         public int EmpId { get; set; }
         public string EmpFirstName { get; set; }
@@ -19,7 +21,8 @@ namespace BankingBackEndAPI.Models
         public string EmpUserName { get; set; }
         public decimal? EmpSalary { get; set; }
         public byte? EmpDepartment { get; set; }
+        public string EmpImagePath { get; set; }
 
-        public virtual Department EmpDepartmentNavigation { get; set; }
+        public virtual Departments EmpDepartmentNavigation { get; set; }
     }
 }

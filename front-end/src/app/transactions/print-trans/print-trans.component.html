@@ -1,0 +1,27 @@
+
+<div class="mainContainer">
+    <form>
+        <mat-form-field>
+            <mat-label>From</mat-label>
+            <input matInput [matDatepicker]="myDatePicker">
+            <mat-datepicker-toggle [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
+            <mat-datepicker #myDatePicker></mat-datepicker>
+        </mat-form-field>
+        <span class="spacer"></span>
+        <mat-form-field>
+            <mat-label>To</mat-label>
+            <input matInput [matDatepicker]="myToDatePicker">
+            <mat-datepicker-toggle [for]="myToDatePicker" matSuffix></mat-datepicker-toggle>
+            <mat-datepicker #myToDatePicker></mat-datepicker>
+        </mat-form-field>
+        <span class="spacer"></span>
+        <button mat-stroked-button color="primary">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">print</mat-icon>
+        </button>
+        <button mat-raised-button color="primary" style="float: right;">
+            Current Month Transactions
+            <mat-icon aria-hidden="false" aria-label="Example home icon">print</mat-icon>
+        </button>
+    </form>
+</div>
+

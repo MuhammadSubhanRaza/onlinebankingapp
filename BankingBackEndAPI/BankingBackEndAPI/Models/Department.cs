@@ -9,12 +9,12 @@ namespace BankingBackEndAPI.Models
     {
         public Department()
         {
-            Employees = new HashSet<Employee>();
+            Employees = new HashSet<Employees>();
         }
 
         public byte DeptId { get; set; }
         public string DeptName { get; set; }
 
-        public virtual ICollection<Employee> Employees { get; set; }
+        public virtual ICollection<Employees> Employees { get; set; }
     }
 }

@@ -1,0 +1,39 @@
+.mainContainer {
+  display: flex;
+  padding: 10px;
+}
+.tabGroup {
+  height: 280px;
+}
+
+.first img {
+  height: 300px;
+  width: 300px;
+}
+
+.second h2 {
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgb(89, 0, 255);
+}
+
+button {
+  width: 60%;
+}
+
+.second {
+  text-align: left;
+  padding: 10px 40px;
+}
+
+.second table td,
+th {
+  padding: 5px;
+  font-size: 1rem;
+}
+
+.second table th {
+  color: rgb(253, 188, 66);
+  font-weight: 400;
+  padding-right: 40px;
+}

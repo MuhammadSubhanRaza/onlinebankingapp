@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-#nullable disable
+// Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
+// If you have enabled NRTs for your project, then un-comment the following line:
+// #nullable disable
 
 namespace BankingBackEndAPI.Models
 {
@@ -9,10 +11,10 @@ namespace BankingBackEndAPI.Models
     {
         public Customer()
         {
-            Accounts = new HashSet<Account>();
-            Complaints = new HashSet<Complaint>();
-            LoanApplications = new HashSet<LoanApplication>();
-            Loans = new HashSet<Loan>();
+            Account = new HashSet<Account>();
+            Complaints = new HashSet<Complaints>();
+            Loan = new HashSet<Loan>();
+            LoanApplications = new HashSet<LoanApplications>();
         }
 
         public int CustId { get; set; }
@@ -26,11 +28,12 @@ namespace BankingBackEndAPI.Models
         public DateTime? CustDob { get; set; }
         public string CustNic { get; set; }
         public bool CustGender { get; set; }
+        public string CustImagePath { get; set; }
 
         public virtual City CustCityNavigation { get; set; }
-        public virtual ICollection<Account> Accounts { get; set; }
-        public virtual ICollection<Complaint> Complaints { get; set; }
-        public virtual ICollection<LoanApplication> LoanApplications { get; set; }
-        public virtual ICollection<Loan> Loans { get; set; }
+        public virtual ICollection<Account> Account { get; set; }
+        public virtual ICollection<Complaints> Complaints { get; set; }
+        public virtual ICollection<Loan> Loan { get; set; }
+        public virtual ICollection<LoanApplications> LoanApplications { get; set; }
     }
 }

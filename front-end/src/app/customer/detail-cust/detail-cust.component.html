@@ -1,0 +1,96 @@
+<mat-dialog-content>
+    <div class="mainContainer">
+        <div class="first">
+            <br><br>
+            <img [src]="imagePath" alt="">
+        </div>
+        <div class="second">
+            <h2>
+                <mat-icon aria-hidden="false" aria-label="Example home icon">person</mat-icon>
+                Customer Details
+            </h2>
+
+            <mat-tab-group class="tabGroup">
+                <mat-tab label="Personal Information">
+                    <table>
+                        <tr>
+                            <th>
+                                <mat-icon aria-hidden="false" aria-label="Example home icon">fingerprint</mat-icon>
+                                ID
+                            </th>
+                            <td>{{custDetails.custId}}</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <mat-icon aria-hidden="false" aria-label="Example home icon">person</mat-icon>
+                                First Name
+                            </th>
+                            <td>{{custDetails.custFirstName}}</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <mat-icon aria-hidden="false" aria-label="Example home icon">person</mat-icon>
+                                Last Name
+                            </th>
+                            <td>{{custDetails.custLastName}}</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <mat-icon aria-hidden="false" aria-label="Example home icon">wc</mat-icon>
+                                Gender
+                            </th>
+                            <td>{{custDetails.custGender}}</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <mat-icon aria-hidden="false" aria-label="Example home icon">event</mat-icon>
+                                Date Of Birth
+                            </th>
+                            <td>{{custDetails.custDob}}</td>
+                        </tr>
+
+                    </table>
+                </mat-tab>
+                <mat-tab label="Related Information">
+                    <table>
+                        <tr>
+                            <th>
+                                <mat-icon aria-hidden="false" aria-label="Example home icon">phone</mat-icon>
+                                Contact
+                            </th>
+                            <td>{{custDetails.custContact}}</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <mat-icon aria-hidden="false" aria-label="Example home icon">email</mat-icon>
+                                Email
+                            </th>
+                            <td>{{custDetails.custEmail}}</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+                                Address
+                            </th>
+                            <td>{{custDetails.custAddress}}</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <mat-icon aria-hidden="false" aria-label="Example home icon">engineering</mat-icon>
+                                Occupation
+                            </th>
+                            <td>{{custDetails.custOccupation}}</td>
+                        </tr>
+                    </table>
+                </mat-tab>
+            </mat-tab-group>
+            <br>
+            <button mat-raised-button color="warn" mat-dialog-close>
+                <mat-icon aria-hidden="false" aria-label="Example home icon">cancel</mat-icon>
+                Close
+            </button>
+        </div>
+
+    </div>
+</mat-dialog-content>
+

@@ -1,69 +1,95 @@
-import { Component, OnInit,AfterViewInit,ViewChild } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatDialog} from '@angular/material/dialog';
 import { AddeditBranchComponent } from './../addedit-branch/addedit-branch.component'
+import { SharedService } from 'src/app/shared.service';
+import { MatSort } from '@angular/material/sort';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { DeleteBranchComponent } from '../delete-branch/delete-branch.component';
+import { DetailBranchComponent } from '../detail-branch/detail-branch.component';
 
 @Component({
   selector: 'app-show-branch',
   templateUrl: './show-branch.component.html',
   styleUrls: ['./show-branch.component.css']
 })
-export class ShowBranchComponent implements AfterViewInit,OnInit {
+export class ShowBranchComponent implements OnInit {
 
-  constructor(private dialog : MatDialog) { }
+  displayedColumns: string[] = ['branId', 'branName', 'branAddress','branchCity','action'];
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort:MatSort;
+  dataSource:any
+
+  constructor(private dialog : MatDialog,private service : SharedService,private snackBar : MatSnackBar) {
+   this.loadDataTable()
+   }
 
   ngOnInit(): void {
   }
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
-
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
+  loadDataTable(){
+     this.service.fetchBranches().subscribe(data=>{console.log("we got"+data)
+      this.dataSource = new MatTableDataSource(data);
+      this.dataSource.sort = this.sort
+      this.dataSource.paginator=this.paginator
+    })
   }
+
+  filterTable(val:string){
+    this.dataSource.filter = val.trim().toLowerCase(); 
+  }
+
+
+
+ 
+
 
 
   openDialog(){
-    this.dialog.open(AddeditBranchComponent)
+    const dialorRef = this.dialog.open(AddeditBranchComponent)
+    dialorRef.afterClosed().subscribe(param=>{
+      this.loadDataTable()
+      if(this.service.crudState){
+        this.snackBar.open("new Branch Added Successfully!","Okay",{duration:3000})
+      }
+      this.service.changeStateToFalse()
+      this.service.changeModifiedStateToFalse()
+    })
   }
 
+  detailRecord(val:any)
+  {
+    this.dialog.open(DetailBranchComponent,{data:val})
+  }
+  updateRecord(val:any)
+  {
+     const dialorRef = this.dialog.open(AddeditBranchComponent,{data:val})
+    dialorRef.afterClosed().subscribe(param=>{
+      this.loadDataTable()
+      if(this.service.modifiedState){
+        this.snackBar.open("Branch Record Modified Successfully!","Okay",{duration:3000})
+      }
+      this.service.changeStateToFalse()
+      this.service.changeModifiedStateToFalse()
+    })
+  }
+  
+  deleteRecord(val:any)
+  {
+    const dialogRef = this.dialog.open(DeleteBranchComponent,{data:val})
+    dialogRef.afterClosed().subscribe(data=>{
+        this.loadDataTable()
+        if(this.service.crudState){
+          this.snackBar.open("Data Deleted Successfully!","Okay",{duration:3000})
+        }
+        this.service.changeStateToFalse()
+     }
+    );   
+  }
 
 }
 
 
 
-
-
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
-
-  const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-  {position: 11, name: 'Sodium', weight: 22.9897, symbol: 'Na'},
-  {position: 12, name: 'Magnesium', weight: 24.305, symbol: 'Mg'},
-  {position: 13, name: 'Aluminum', weight: 26.9815, symbol: 'Al'},
-  {position: 14, name: 'Silicon', weight: 28.0855, symbol: 'Si'},
-  {position: 15, name: 'Phosphorus', weight: 30.9738, symbol: 'P'},
-  {position: 16, name: 'Sulfur', weight: 32.065, symbol: 'S'},
-  {position: 17, name: 'Chlorine', weight: 35.453, symbol: 'Cl'},
-  {position: 18, name: 'Argon', weight: 39.948, symbol: 'Ar'},
-  {position: 19, name: 'Potassium', weight: 39.0983, symbol: 'K'},
-  {position: 20, name: 'Calcium', weight: 40.078, symbol: 'Ca'},
-];
 

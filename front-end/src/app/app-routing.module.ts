@@ -15,6 +15,10 @@ import { AddEditEmpComponent } from './Employee/add-edit-emp/add-edit-emp.compon
 import { EmployeeComponent } from './employee/employee.component'
 import { ShowEmpComponent } from './employee/show-emp/show-emp.component'
 import { LoanApplicationComponent } from './loan-application/loan-application.component';
+import { MakeTransComponent } from './transactions/make-trans/make-trans.component';
+import { PrintTransComponent } from './transactions/print-trans/print-trans.component';
+import { TransactionsComponent } from './transactions/transactions.component';
+import { ViewTransComponent } from './transactions/view-trans/view-trans.component';
 
 
 const routes : Routes = [
@@ -35,7 +39,12 @@ const routes : Routes = [
   {path:"loanapplication",component:LoanApplicationComponent},
   {path:"empsettings",component:EmpSettingsComponent},
   {path:"custsettings",component:CustSettingsComponent},
-  {path:"customerdashboard",component:CustDashboardComponent}
+  {path:"customerdashboard",component:CustDashboardComponent},
+  {path:"transaction",component:TransactionsComponent,children:[
+    {path:"make",component:MakeTransComponent},
+    {path:"view",component:ViewTransComponent},
+    {path:"print",component:PrintTransComponent}
+  ]}
 ];
 
 @NgModule({

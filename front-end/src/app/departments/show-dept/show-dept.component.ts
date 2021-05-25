@@ -7,6 +7,7 @@ import { SharedService } from './../../shared.service'
 import { MatSort } from '@angular/material/sort';
 import { MatSnackBar } from '@angular/material/snack-bar'
 import { DeleteDeptComponent } from '../delete-dept/delete-dept.component';
+import { DeptDetailsComponent } from '../dept-details/dept-details.component';
 
 
 @Component({
@@ -93,12 +94,15 @@ export class ShowDeptComponent implements OnInit {
     );   
   }
 
+
+  detailRecord(val:any)
+  {
+    this.dialog.open(DeptDetailsComponent,{data:val})
+  }
+
+
   
 }
 
-export interface PeriodicElement {
-  deptId: number;
-  deptName : string;
-}
 
 

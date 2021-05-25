@@ -36,6 +36,18 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DeleteDeptComponent } from './departments/delete-dept/delete-dept.component'
 import { FormsModule } from '@angular/forms'
 import { SharedService } from './shared.service';
+import { FooterComponent } from './footer/footer.component';
+import { DeptDetailsComponent } from './departments/dept-details/dept-details.component';
+import { TransactionsComponent } from './transactions/transactions.component';
+import { MakeTransComponent } from './transactions/make-trans/make-trans.component';
+import { ViewTransComponent } from './transactions/view-trans/view-trans.component';
+import { PrintTransComponent } from './transactions/print-trans/print-trans.component';
+import { DeleteBranchComponent } from './branch/delete-branch/delete-branch.component';
+import { DetailBranchComponent } from './branch/detail-branch/detail-branch.component';
+import { DetailsEmpComponent } from './employee/details-emp/details-emp.component';
+import { DeleteEmpComponent } from './employee/delete-emp/delete-emp.component';
+import { DeleteCustComponent } from './customer/delete-cust/delete-cust.component';
+import { DetailCustComponent } from './customer/detail-cust/detail-cust.component';
 
 
 @NgModule({
@@ -67,6 +79,18 @@ import { SharedService } from './shared.service';
     CustSettingsComponent,
     CustDashboardComponent,
     DeleteDeptComponent,
+    FooterComponent,
+    DeptDetailsComponent,
+    TransactionsComponent,
+    MakeTransComponent,
+    ViewTransComponent,
+    PrintTransComponent,
+    DeleteBranchComponent,
+    DetailBranchComponent,
+    DetailsEmpComponent,
+    DeleteEmpComponent,
+    DeleteCustComponent,
+    DetailCustComponent,
   ],
   imports: [
     BrowserModule,

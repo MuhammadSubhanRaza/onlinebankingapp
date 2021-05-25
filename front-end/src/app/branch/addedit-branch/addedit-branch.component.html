@@ -1,28 +1,39 @@
 
 <div>
-    <h2 mat-dialog-title>ADD BANK BRANCH</h2>
+    <h3 mat-dialog-title>
+        <mat-icon aria-hidden="false" aria-label="Example home icon">apps</mat-icon>
+        ADD | EDIT BRANCH
+    </h3>
     <mat-dialog-content>
+        <form [formGroup]="branchForm" (ngSubmit)="onSubmit()">
         <mat-form-field>
             <mat-label>City</mat-label>
-            <mat-select>
-                <mat-option value="1">Angular</mat-option>
-                <mat-option value="2">Vue</mat-option>
-                <mat-option value="3">React</mat-option>
+            <mat-select formControlName="ddbranCityId" [(ngModel)]="branchCityId">
+                <mat-option value="0">-- Select --</mat-option>
+                <mat-option *ngFor="let city of citiesData" [value]="city.cityId">{{city.cityName}}</mat-option>
             </mat-select>
         </mat-form-field>
         <br>
         <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker appearance="outline">
             <mat-label>Branch Name</mat-label>
-            <input matInput required>
+            <input formControlName="txtbranName" matInput required [(ngModel)]="branchName">
         </mat-form-field>
         <br>
         <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker appearance="outline">
             <mat-label>Address</mat-label>
-            <input matInput required>
+            <input formControlName="txtbranAddress" matInput required [(ngModel)]="branchAddress">
         </mat-form-field>
+        <br><br>
+        <button mat-stroked-button color="warn" mat-dialog-close>
+            <mat-icon aria-hidden="false" aria-label="Example home icon">cancel</mat-icon>
+            Close
+        </button>
+        <span class="spacer"></span>
+        <button mat-stroked-button color="primary" type="submit" mat-dialog-close>
+            <mat-icon aria-hidden="false" aria-label="Example home icon">save</mat-icon>
+            Save
+        </button>
+        </form>
     </mat-dialog-content>
-    <mat-dialog-actions>
-        <button mat-stroked-button color="warn" mat-dialog-close>Close</button>
-        <button mat-stroked-button color="primary" mat-dialog-close>Add</button>
-    </mat-dialog-actions>
+    
 </div>

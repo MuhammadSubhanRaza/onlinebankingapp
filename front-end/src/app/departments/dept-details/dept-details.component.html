@@ -1,0 +1,29 @@
+<div class="dialogHeader">
+    <h3 mat-dialog-title>
+        <mat-icon aria-hidden="false" aria-label="Example home icon">apps</mat-icon>
+        DEPARTMENT DETAILS
+    </h3>
+</div>
+<div>
+    <form>
+        <mat-dialog-content>
+            <br>
+            <table>
+                <tr>
+                    <th>Department ID : </th>
+                    <td>{{department.deptId}}</td>
+                </tr>
+                <tr>
+                    <th>Department Name : </th>
+                    <td>{{department.deptName}}</td>
+                </tr>
+            </table>
+            
+            
+            <button mat-raised-button color="accent" mat-dialog-close>
+                <mat-icon aria-hidden="false" aria-label="Example home icon">cancel</mat-icon>
+                Close
+            </button>
+        </mat-dialog-content>
+    </form>
+</div>

@@ -38,6 +38,10 @@ namespace BankingBackEndAPI
             services.AddDbContext<OnlineBankingDBContext>(o =>
             o.UseSqlServer("Data Source=.;Initial Catalog=OnlineBankingDB;Integrated Security=True")
             .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
+
+            services.AddControllersWithViews().AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -59,6 +63,11 @@ namespace BankingBackEndAPI
             app.UseAuthorization();
 
             app.UseCors("defaultPolicy");
+
+            app.UseStaticFiles(new StaticFileOptions { 
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(),"Photos")),
+                RequestPath = "/Photos"
+            });
 
             app.UseEndpoints(endpoints =>
             {
