@@ -11,8 +11,19 @@
   border-right: solid 1px gray;
 }
 
+.CustomerInfo mat-form-field {
+  width: 100px;
+}
+
 .AddAccountContainer {
-  background-color: red;
+  padding-left: 30px;
+  box-sizing: border-box;
+}
+
+.first,
+.second {
+  width: 45%;
+  text-align: center;
 }
 
 .fieldIcons {
@@ -24,4 +35,31 @@
 
 .spacer {
   padding-left: 20px;
+}
+
+table {
+  text-align: left;
+  width: 100%;
+}
+
+table td,
+th {
+  padding: 5px 0px;
+}
+
+.first mat-form-field {
+  width: 80%;
+}
+
+.second mat-form-field {
+  width: 80%;
+}
+
+form {
+  display: flex;
+}
+
+.actionButtons {
+  width: 40%;
+  margin-left: 10px;
 }

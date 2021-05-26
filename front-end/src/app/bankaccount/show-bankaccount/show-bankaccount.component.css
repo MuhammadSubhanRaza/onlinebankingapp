@@ -21,3 +21,19 @@ table {
 .spacer {
   padding: 0px 8px;
 } */
+
+.circle-inactive {
+  padding: 2px;
+  background-color: red;
+  border-radius: 50%;
+  width: 6px;
+  height: 6px;
+}
+
+.circle-active {
+  padding: 2px;
+  background-color: rgb(0, 255, 42);
+  border-radius: 50%;
+  width: 6px;
+  height: 6px;
+}

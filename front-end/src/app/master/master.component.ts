@@ -1,24 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Event,Router,NavigationStart,NavigationEnd} from '@angular/router'
 import {of,} from 'rxjs';
 import {delay} from 'rxjs/operators';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-master',
+  templateUrl: './master.component.html',
+  styleUrls: ['./master.component.css']
 })
-export class AppComponent {
-  title = 'front-end';
+export class MasterComponent implements OnInit {
+
+    title = 'front-end';
 
   spinnerStatus = true;
 
-  
-  constructor(private router:Router){
-     
-  }
+  constructor(private router:Router) { }
 
-  ngOnInit(){
+  ngOnInit(): void {
      this.router.events.subscribe((routerEvent:Event)=>{
           console.log(routerEvent)
         if(routerEvent instanceof NavigationStart)
@@ -35,11 +33,6 @@ export class AppComponent {
       })
   }
 
-  sideNav = false;
-
-onCheck()
-{
-  this.router.navigate(['main']);
-}
+    sideNav = false;
 
 }

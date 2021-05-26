@@ -25,6 +25,7 @@ import { MatCardModule } from '@angular/material/card'
 import { MatSnackBarModule } from '@angular/material/snack-bar'
 import { MatProgressBarModule } from '@angular/material/progress-bar'
 import { MatTabsModule } from '@angular/material/tabs'
+import { MatCheckboxModule } from '@angular/material/checkbox'
 
 const ItemsArray = [
   MatButtonModule,
@@ -51,7 +52,9 @@ const ItemsArray = [
   MatCardModule,
   MatSnackBarModule,
   MatProgressBarModule,
-  MatTabsModule
+  MatTabsModule,
+  MatCheckboxModule
+
 ]
 
 
@@ -82,7 +85,8 @@ const ItemsArray = [
     MatCardModule,
     MatSnackBarModule,
     MatProgressBarModule,
-    MatTabsModule
+    MatTabsModule,
+    MatCheckboxModule
   ],
   exports:[
     ItemsArray

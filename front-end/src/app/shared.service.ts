@@ -150,5 +150,42 @@ export class SharedService {
   }
 
 
+  //------------------------------ ACCOUNTS -------------------------
+
+
+  getCustomerForAccountCreation(val:any)
+  {
+    return this.http.get(this.apiUrl+"customers/"+val)
+  }
+
+  addAccount(val:any)
+  {
+    return this.http.post(this.apiUrl+"accounts",val)
+  }
+
+  getLastRecord()
+  {
+    return this.http.get(this.apiUrl+"customers/getlastchild")
+  }
+
+  fetchAccounts():Observable<any[]>
+  {
+    return this.http.get<any>(this.apiUrl+"accounts")
+  }
+
+  getLastAccountAdded()
+  {
+    return this.http.get(this.apiUrl+"accounts/getlastchild")
+  }
+
+  deleteAccount(val:any){
+    return this.http.delete(this.apiUrl+"accounts/"+val.accId)
+  }
+
+  updateAccount(val : any)
+  {
+    return this.http.put(this.apiUrl+"accounts/"+val.accId,val)
+  }
+
 
 }

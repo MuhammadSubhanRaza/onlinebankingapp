@@ -131,5 +131,23 @@ namespace BankingBackEndAPI.Controllers
                 return new JsonResult("anonymous.png");
             }
         }
+
+        [Route("GetLastChild")]
+        [HttpGet]
+        public async Task<ActionResult<Customer>> GetLastChild()
+        
+        {
+            var customer = _context.Customer.ToList();
+            var cst = customer.Last();
+
+            if (customer == null)
+            {
+                return NotFound();
+            }
+
+            return cst;
+        }
+
+
     }
 }

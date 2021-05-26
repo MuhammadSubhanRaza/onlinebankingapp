@@ -48,6 +48,9 @@ import { DetailsEmpComponent } from './employee/details-emp/details-emp.componen
 import { DeleteEmpComponent } from './employee/delete-emp/delete-emp.component';
 import { DeleteCustComponent } from './customer/delete-cust/delete-cust.component';
 import { DetailCustComponent } from './customer/detail-cust/detail-cust.component';
+import { DetialAccComponent } from './bankaccount/detial-acc/detial-acc.component';
+import { DeleteAccComponent } from './bankaccount/delete-acc/delete-acc.component';
+import { MasterComponent } from './master/master.component';
 
 
 @NgModule({
@@ -91,6 +94,9 @@ import { DetailCustComponent } from './customer/detail-cust/detail-cust.componen
     DeleteEmpComponent,
     DeleteCustComponent,
     DetailCustComponent,
+    DetialAccComponent,
+    DeleteAccComponent,
+    MasterComponent,
   ],
   imports: [
     BrowserModule,

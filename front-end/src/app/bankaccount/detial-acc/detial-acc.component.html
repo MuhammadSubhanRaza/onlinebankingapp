@@ -1,0 +1,54 @@
+<mat-dialog-content>
+  <div class="mainContainer">
+      
+    <h1 class="title">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">account_balance_wallet</mat-icon>    
+        Account Details
+    </h1>
+    <mat-divider></mat-divider>
+
+    <table>
+        <tr>
+            <th>Account ID</th>
+            <td>{{accountRecord.accId}}</td>
+        </tr>
+        <tr>
+            <th>Account NO #</th>
+            <td>{{accountRecord.accAccountCode}}</td>
+        </tr>
+        <tr>
+            <th>Customer Name</th>
+            <td>{{accountRecord.accCustomer.custFirstName+" "+accountRecord.accCustomer.custLastName}}</td>
+        </tr>
+        <tr>
+            <th>Balance</th>
+            <td>{{accountRecord.accOpeningBalance}}</td>
+        </tr>
+        <tr>
+            <th>Date Of Opening</th>
+            <td>{{accountRecord.accDateOfOpening}}</td>
+        </tr>
+        <tr>
+            <th>Account Status</th>
+            <td>
+                <div class="active" *ngIf="accountRecord.accStatus"></div>
+                <div class="inactive" *ngIf="!accountRecord.accStatus"></div>
+            </td>
+        </tr>
+        <tr>
+            <th>Account Login</th>
+            <td>{{accountRecord.accLoginName}}</td>
+        </tr>
+        <tr>
+            <th>Account Password</th>
+            <td>{{accountRecord.accPassword}}</td>
+        </tr>
+    </table>
+
+    <br>
+    <button mat-raised-button color="accent" mat-dialog-close>
+        <mat-icon aria-hidden="false" aria-label="Example home icon">cancel</mat-icon>
+        Close
+    </button>
+  </div>
+</mat-dialog-content>

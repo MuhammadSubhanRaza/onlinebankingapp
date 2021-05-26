@@ -15,6 +15,7 @@ import { AddEditEmpComponent } from './Employee/add-edit-emp/add-edit-emp.compon
 import { EmployeeComponent } from './employee/employee.component'
 import { ShowEmpComponent } from './employee/show-emp/show-emp.component'
 import { LoanApplicationComponent } from './loan-application/loan-application.component';
+import { MasterComponent } from './master/master.component';
 import { MakeTransComponent } from './transactions/make-trans/make-trans.component';
 import { PrintTransComponent } from './transactions/print-trans/print-trans.component';
 import { TransactionsComponent } from './transactions/transactions.component';
@@ -22,6 +23,7 @@ import { ViewTransComponent } from './transactions/view-trans/view-trans.compone
 
 
 const routes : Routes = [
+  {path:"main",component:MasterComponent},
   {path:"employees",component:EmployeeComponent,children:[
     {path:"view",component:ShowEmpComponent},
     {path:"addedit",component:AddEditEmpComponent}

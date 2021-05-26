@@ -2,23 +2,124 @@
 
 <div class="mainContainer">
     <div class="CustomerInfo">
-        <div class="mat-caption">Search Employee</div>
+        <div class="mat-caption">Search Customer</div>
         <mat-divider></mat-divider>
+        
         <br>
         <mat-icon aria-hidden="false" class="fieldIcons" aria-label="Example home icon">person</mat-icon>
         <span class="spacer"></span>
         <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker>
-            <mat-label>Occupation</mat-label>
-            <input matInput required>
+            <mat-label>Customer ID</mat-label>
+            <input matInput required [(ngModel)]="searchString">
         </mat-form-field>
         <span class="spacer"></span>
-        <button mat-raised-button color="primary">
-            <mat-icon aria-hidden="false" aria-label="Example home icon">search</mat-icon>
+        <button mat-raised-button color="primary" (click)="searchCustomer()">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">download</mat-icon>
         </button>
+
+        <table>
+            <tr>
+                <th>ID</th>
+                <td>{{customerRecord.custId}}</td>
+            </tr>
+            <tr>
+                <th>First Name</th>
+                <td>{{customerRecord.custFirstName}}</td>
+            </tr>
+            <tr>
+                <th>Last Name</th>
+                <td>{{customerRecord.custLastName}}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{customerRecord.custNic}}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{customerRecord.custEmail}}</td>
+            </tr>
+            <tr>
+                <th>Contact</th>
+                <td>{{customerRecord.custContact}}</td>
+            </tr>
+            <tr>
+                <th>Gender</th>
+                <td>{{customerGender}}</td>
+            </tr>
+        </table>
     </div>
 
     <div class="AddAccountContainer">
+        <div class="mat-caption" style="padding-top: 9px;">Create Account</div>
+        <mat-divider></mat-divider>
+        <form [formGroup]="accountForm" (ngSubmit)="onSubmit()">
+        <div class="first">
+            <mat-form-field>
+                <mat-label>Account Type</mat-label>
+                <mat-select formControlName="ddlAccountType" [(ngModel)]="accType">
+                    <mat-option>-- Select --</mat-option>
+                    <mat-option value=1>Saving Account</mat-option>
+                    <mat-option value=2>Current Account</mat-option>
+                    <mat-option value=3>Fixed Account</mat-option>
+                </mat-select>
+            </mat-form-field>
+            
+            <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker>
+                <mat-label>Opening Balance</mat-label>
+                <input matInput required formControlName="txtOperningBalance" [(ngModel)]="accBalance"/>
+            </mat-form-field>
+            
+            <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker>
+                <mat-label>Date Of Account Opening</mat-label>
+                <input matInput required formControlName="txtDateOfAccOpening" [(ngModel)]="currentDate"/>
+            </mat-form-field>
+            
+            <mat-form-field>
+                <mat-label>Branch</mat-label>
+                <mat-select formControlName="ddlBranch" [(ngModel)]="accBranch">
+                    <mat-option>-- Select --</mat-option>
+                    <mat-option *ngFor="let item of branchList" [value]="item.branId">{{item.branName}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            
+            <section>
+                <mat-checkbox formControlName="chkIsActive" [(ngModel)]="accStatus">Active Account</mat-checkbox>
+            </section>
+        </div>
 
+        <div class="second">
+            <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker>
+                <mat-label>Account No #</mat-label>
+                <input matInput required formControlName="txtAccountNo" [(ngModel)]="accountNo"/>
+            </mat-form-field>
+        
+            <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker>
+                <mat-label>Login Name</mat-label>
+                <input matInput required formControlName="txtLoginName" [(ngModel)]="accLoginName"/>
+            </mat-form-field>
+            <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker>
+                <mat-label>Password</mat-label>
+                <input matInput required formControlName="txtPassword" [(ngModel)]="accpassword"/>
+            </mat-form-field>
+
+            <button mat-stroked-button color="primary" type="button" (click)="generateAccountCredentials()">
+                Generate Account Credentials
+            </button>
+
+            <br><br><br>
+            <button class="actionButtons" mat-raised-button color="accent" type="button">
+                Cancel 
+                <mat-icon aria-hidden="false" aria-label="Example home icon">cancel</mat-icon>
+            </button>
+
+            <button class="actionButtons" mat-raised-button color="primary" type="submit">
+                <mat-icon aria-hidden="false" aria-label="Example home icon">save</mat-icon>
+                Save
+            </button>
+            
+        </div>
+        </form>
     </div>
+    
 </div>
 

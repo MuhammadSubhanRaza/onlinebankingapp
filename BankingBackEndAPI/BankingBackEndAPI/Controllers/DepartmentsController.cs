@@ -45,7 +45,7 @@ namespace BankingBackEndAPI.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutDepartment(byte id, Department department)
+        public async Task<IActionResult> PutDepartment(byte id, Departments department)
         {
             if (id != department.DeptId)
             {
@@ -77,7 +77,7 @@ namespace BankingBackEndAPI.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Department>> PostDepartment(Departments department)
+        public async Task<ActionResult<Departments>> PostDepartment(Departments department)
         {
             _context.Departments.Add(department);
             await _context.SaveChangesAsync();

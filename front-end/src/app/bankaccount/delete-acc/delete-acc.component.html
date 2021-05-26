@@ -1,0 +1,24 @@
+<div class="dialogHeader">
+    <h3 mat-dialog-title>
+        <mat-icon aria-hidden="false" aria-label="Example home icon">account_balance_wallet</mat-icon>
+        DELETE ACCOUNT
+    </h3>
+</div>
+<div>
+    <form>
+        <mat-dialog-content>
+            <br>
+            <p>Do you really want to delete this record ?</p>
+            <h1>{{accountRecord.accAccountCode}}</h1>
+            <button mat-button color="warn" mat-dialog-close>
+                <mat-icon aria-hidden="false" aria-label="Example home icon">cancel</mat-icon>
+                Close
+            </button>
+            <span class="spacer"></span>
+            <button mat-button color="primary" (click)="onSubmit()" mat-dialog-close>
+                <mat-icon aria-hidden="false" aria-label="Example home icon">delete_forever</mat-icon>
+                Delete
+            </button>
+        </mat-dialog-content>
+    </form>
+</div>
