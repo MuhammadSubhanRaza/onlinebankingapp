@@ -1,0 +1,76 @@
+.mainContainer {
+  height: 100%;
+  position: relative;
+  background-color: rgb(219, 219, 219);
+}
+
+.hostContainer {
+  display: flex;
+  height: 450px;
+  width: 60%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: whitesmoke;
+  box-shadow: rgb(167, 166, 166) 0px 15px 15px;
+}
+
+.right {
+  height: inherit;
+  width: 50%;
+  background-color: rgb(64, 0, 184);
+  background-image: url("./../../assets/imgVecorS.png");
+  background-size: contain;
+  padding: 35px;
+  box-sizing: border-box;
+  text-align: left;
+  color: rgb(224, 223, 223);
+}
+
+.left {
+  height: inherit;
+  width: 50%;
+  background-color: transparent;
+  padding: 35px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.left h2 {
+  letter-spacing: 3px;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  border-bottom: solid 2px rgb(201, 201, 201);
+  width: 100px;
+}
+.left p {
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  margin-bottom: 10px;
+  padding-top: 6px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+button {
+  width: 80%;
+}
+
+.headIcon {
+  font-size: 2.5rem;
+  color: rgb(73, 0, 168);
+  padding-bottom: 20px;
+}
+
+.right h1 {
+  padding-top: 100px;
+}
+.right p {
+  margin: 0;
+  padding: 0;
+}

@@ -13,6 +13,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using BankingBackEndAPI.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace BankingBackEndAPI
 {
@@ -28,6 +31,25 @@ namespace BankingBackEndAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAuthentication(opt =>
+            {
+                opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(options=> {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+
+                    ValidIssuer = "http://localhost:50991",
+                    ValidAudience = "http://localhost:50991",
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"))
+                };
+            });
+
             services.AddControllers();
             services.AddCors(options => {
                 options.AddPolicy("defaultPolicy", builder => {
@@ -61,6 +83,8 @@ namespace BankingBackEndAPI
             //});
 
             app.UseAuthorization();
+
+            app.UseAuthentication();
 
             app.UseCors("defaultPolicy");
 

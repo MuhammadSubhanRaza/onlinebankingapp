@@ -1,0 +1,153 @@
+
+<div class="mat-subheading-2">Account Settings</div>
+
+<div class="mainContainer">
+    <div class="first">
+        <table>
+            <tr>
+                <td>
+                    <mat-icon class="attrIcon" aria-hidden="false" aria-label="Example home icon">person</mat-icon>
+                    <label class="attribute">First Name</label>
+                </td>
+                <td>
+                    <label class="value">{{loggedInUser.empFirstName}}</label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <mat-divider></mat-divider>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-icon class="attrIcon" aria-hidden="false" aria-label="Example home icon">person</mat-icon>
+                    <label class="attribute">Last Name</label>
+                </td>
+                <td>
+                    <label class="value">{{loggedInUser.empLastName}}</label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <mat-divider></mat-divider>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-icon class="attrIcon" aria-hidden="false" aria-label="Example home icon">wc</mat-icon>
+                    <label class="attribute">Gender</label>
+                </td>
+                <td>
+                    <label class="value">{{loggedInUser.empGender}}</label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <mat-divider></mat-divider>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-icon class="attrIcon" aria-hidden="false" aria-label="Example home icon">phone</mat-icon>
+                    <label class="attribute">Contact</label>
+                </td>
+                <td>
+                    <label class="value">{{loggedInUser.empContact}}</label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <mat-divider></mat-divider>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-icon class="attrIcon" aria-hidden="false" aria-label="Example home icon">event</mat-icon>
+                    <label class="attribute">Date of Birth</label>
+                </td>
+                <td>
+                    <label class="value">{{loggedInUser.empDateOfBirth}}</label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <mat-divider></mat-divider>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-icon class="attrIcon" aria-hidden="false" aria-label="Example home icon">school</mat-icon>
+                    <label class="attribute">Qualification</label>
+                </td>
+                <td>
+                    <label class="value">{{loggedInUser.empQualification}}</label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <mat-divider></mat-divider>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-icon class="attrIcon" aria-hidden="false" aria-label="Example home icon">grid_view</mat-icon>
+                    <label class="attribute">Department</label>
+                </td>
+                <td>
+                    <label class="value">{{loggedInUser.empDepartment}}</label>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="second">
+
+        <mat-button-toggle-group>
+            <mat-button-toggle value="bold" (click)="onChangeDisablity()">Change Password</mat-button-toggle>
+        </mat-button-toggle-group>
+
+        <table>
+            <tr>
+                <td>
+                    <mat-icon class="attrIcon" aria-hidden="false" aria-label="Example home icon">person</mat-icon>
+                    <label class="attribute">User Name</label>
+                </td>
+                <td>
+                    <label class="value">{{loggedInUser.empUserName}}</label>
+                </td>
+            </tr>
+        </table>
+
+        <mat-divider></mat-divider>
+
+        <mat-icon aria-hidden="false" class="attrIcon" aria-label="Example home icon">password</mat-icon>
+        <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker>
+            <mat-label>New Password</mat-label>
+            <input matInput type="password" required [disabled]="isDisabled" [(ngModel)]="newPassword">
+        </mat-form-field>
+        <br><br>
+        <mat-icon aria-hidden="false" class="attrIcon" aria-label="Example home icon">password</mat-icon>
+        <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker>
+            <mat-label>Confirm Password</mat-label>
+            <input matInput type="password" required [disabled]="isDisabled" [(ngModel)]="confirmPassword">
+        </mat-form-field>
+        <br>
+        <mat-divider></mat-divider>
+        <br>
+        <mat-icon aria-hidden="false" class="attrIcon" aria-label="Example home icon">password</mat-icon>
+        <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker>
+            <mat-label>Old Password</mat-label>
+            <input matInput type="password" required [disabled]="isDisabled" [(ngModel)]="oldPassword">
+        </mat-form-field>
+        <br><br>
+
+        <button mat-raised-button color="accent">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">cancel</mat-icon>
+            Cancel
+        </button>
+        <button mat-raised-button color="primary" (click)="onSave()">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">save</mat-icon>
+            Save
+        </button>
+    </div>
+</div>

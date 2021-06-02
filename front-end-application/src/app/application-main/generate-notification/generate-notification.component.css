@@ -1,0 +1,15 @@
+.notificationFields {
+  width: 50%;
+  margin: auto;
+}
+mat-form-field {
+  width: 100%;
+}
+.Subject-field {
+  height: 200px;
+}
+
+button {
+  width: 46%;
+  margin: 10px;
+}

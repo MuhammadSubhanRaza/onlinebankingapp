@@ -14,5 +14,7 @@ namespace BankingBackEndAPI.Models
         public string TranAccountNoReciever { get; set; }
         public DateTime? TranDate { get; set; }
         public decimal? TranAmountTransffered { get; set; }
+        public string TranRecieverName { get; set; }
+        public string TranDescription { get; set; }
     }
 }

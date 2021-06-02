@@ -149,3 +149,4 @@ C:\Users\Muhammad Subhan Raza\Desktop\OnlineBankingApp\onlinebankingapp\BankingB
 C:\Users\Muhammad Subhan Raza\Desktop\OnlineBankingApp\onlinebankingapp\BankingBackEndAPI\BankingBackEndAPI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\Muhammad Subhan Raza\Desktop\OnlineBankingApp\onlinebankingapp\BankingBackEndAPI\BankingBackEndAPI\obj\Debug\netcoreapp3.1\BankingBackEndAPI.RazorTargetAssemblyInfo.cs
 C:\Users\Muhammad Subhan Raza\Desktop\OnlineBankingApp\onlinebankingapp\BankingBackEndAPI\BankingBackEndAPI\obj\Debug\netcoreapp3.1\BankingBackEndAPI.Views.pdb
+C:\Users\Muhammad Subhan Raza\Desktop\OnlineBankingApp\onlinebankingapp\BankingBackEndAPI\BankingBackEndAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll

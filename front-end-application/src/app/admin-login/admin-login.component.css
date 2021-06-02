@@ -1,0 +1,129 @@
+.mainLoginScreenContainer {
+  /* background: linear-gradient(90deg, rgb(238, 238, 238), rgb(44, 0, 85)); */
+  background-color: whitesmoke;
+  /* background-color: rgb(255, 115, 0); */
+  /* background-color: rgb(30, 15, 44); */
+  height: 100%;
+  /* background: url("./../../assets/loginback2.jpg"); */
+  background-size: cover;
+}
+
+.loginInner {
+  /* background-color: rgba(11, 1, 29, 0.7); */
+  /* background: linear-gradient(
+    45deg,
+    rgb(36, 1, 102, 0.7),
+    rgb(177, 100, 0, 0.7)
+  ); */
+  /* background-color: rgba(38, 0, 73, 0.75); */
+  height: inherit;
+}
+
+.loginContainer {
+  height: 450px;
+  width: 350px;
+  /* background-color: rgba(224, 224, 224, 1); */
+  background-color: transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+  box-shadow: rgb(134, 134, 134) 0px 10px 10px;
+}
+
+.loginCardHeader {
+  text-align: center;
+}
+
+img {
+  width: 50px;
+  height: 50px;
+}
+
+.loginTitle {
+  letter-spacing: 3px;
+  margin: 0;
+}
+.loginCardHeader p {
+  padding-top: 15px;
+  margin: 0;
+  letter-spacing: 2px;
+  /* text-transform: uppercase; */
+}
+
+.loginForm {
+  padding: 10px 30px;
+}
+
+.loginForm mat-form-field,
+button {
+  width: 100%;
+}
+.loginForm a {
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  padding-top: 10px;
+  font-size: 1rem;
+}
+
+.firstHalf {
+  color: rgb(95, 95, 95);
+  text-align: center;
+}
+
+.firstHalf ul li {
+  display: block;
+  color: rgb(255, 255, 255);
+}
+
+.firstHalf h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.firstHalf h1 {
+  color: rgb(218, 58, 138);
+  font-size: 2rem;
+  padding: 0;
+  margin: 0;
+  padding-top: 30px;
+  padding-bottom: 5px;
+}
+
+.appReagrds {
+  padding-top: 60px;
+  color: orange;
+}
+
+@media only screen and (max-width: 800px) {
+  .firstHalf {
+    display: none;
+  }
+  .loginContainer {
+    transform: translate(-50%, -50%);
+  }
+}
+
+.headIcon {
+  color: rgb(89, 0, 255);
+  font-size: 2rem;
+}
+
+.invalidLoginNotification {
+  background-color: rgb(220, 20, 20);
+  color: white;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  bottom: 2%;
+  transform: translateX(-50%);
+  padding: 8px 15px;
+}
+
+.invalidLoginNotification p {
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+}

@@ -1,0 +1,25 @@
+
+<div class="mainContianer">
+    <div class="notificationFields">
+        <mat-form-field floatLabel="auto" color="primary" appearance="outline">
+            <mat-label>Subject</mat-label>
+            <input matInput required type="text" [(ngModel)]="notificationSubject"/>
+        </mat-form-field>
+        <br><br>
+        <mat-form-field  appearance="outline">
+            <mat-label>Body</mat-label>
+            <textarea class="Subject-field" matInput [(ngModel)]="notificationBody"></textarea>
+        </mat-form-field>
+
+        <button mat-raised-button color="accent">
+           CANCEL
+            <mat-icon aria-hidden="false" aria-label="Example home icon">cancel</mat-icon>
+        </button>
+
+        <button mat-raised-button color="primary" (click)="onSubmit()">
+            SEND NOTIFICATION TO ALL
+            <mat-icon aria-hidden="false" aria-label="Example home icon">send</mat-icon>
+        </button>
+
+    </div>
+</div>

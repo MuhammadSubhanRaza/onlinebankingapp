@@ -29,6 +29,7 @@ namespace BankingBackEndAPI.Models
         public virtual DbSet<Employees> Employees { get; set; }
         public virtual DbSet<Loan> Loan { get; set; }
         public virtual DbSet<LoanApplications> LoanApplications { get; set; }
+        public virtual DbSet<Notifiacation> Notifiacation { get; set; }
         public virtual DbSet<Transactions> Transactions { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -281,6 +282,34 @@ namespace BankingBackEndAPI.Models
                     .HasConstraintName("FK__LoanAppli__LoanA__3B75D760");
             });
 
+            modelBuilder.Entity<Notifiacation>(entity =>
+            {
+                entity.HasKey(e => e.NotId)
+                    .HasName("PK__notifiac__F89006F62586FB14");
+
+                entity.ToTable("notifiacation");
+
+                entity.Property(e => e.NotId).HasColumnName("notId");
+
+                entity.Property(e => e.NotBody)
+                    .HasColumnName("notBody")
+                    .IsUnicode(false);
+
+                entity.Property(e => e.NotDate)
+                    .HasColumnName("notDate")
+                    .HasColumnType("date");
+
+                entity.Property(e => e.NotHasRead).HasColumnName("notHasRead");
+
+                entity.Property(e => e.NotSubject)
+                    .IsRequired()
+                    .HasColumnName("notSubject")
+                    .HasMaxLength(150)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.NotTo).HasColumnName("notTo");
+            });
+
             modelBuilder.Entity<Transactions>(entity =>
             {
                 entity.HasKey(e => e.TranId)
@@ -297,6 +326,14 @@ namespace BankingBackEndAPI.Models
                 entity.Property(e => e.TranAmountTransffered).HasColumnType("money");
 
                 entity.Property(e => e.TranDate).HasColumnType("date");
+
+                entity.Property(e => e.TranDescription)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.TranRecieverName)
+                    .HasMaxLength(150)
+                    .IsUnicode(false);
             });
 
             OnModelCreatingPartial(modelBuilder);

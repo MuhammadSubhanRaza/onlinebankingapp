@@ -1,0 +1,62 @@
+.mainContainer {
+  height: 100%;
+  background-image: url("./../../assets/loginback3.jpg");
+  background-size: cover;
+}
+.hostContainer {
+  height: inherit;
+  background-color: rgba(26, 1, 46, 0.8);
+  text-align: center;
+}
+
+.hostContainer h1 {
+  letter-spacing: 3px;
+  font-size: 2rem;
+  color: rgb(245, 80, 171);
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  padding-top: 10px;
+}
+
+.hostContainer h5 {
+  color: rgb(236, 236, 236);
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  letter-spacing: 2px;
+  padding-top: 4px;
+}
+.hostContainer h4 {
+  color: rgb(207, 207, 207);
+  font-size: 1.5rem;
+  padding: 0;
+  margin: 0;
+  padding-top: 55px;
+  text-align: center;
+}
+img {
+  width: 70px;
+  height: 70px;
+  margin-top: 25px;
+}
+
+button {
+  width: 300px;
+  height: 80px;
+  outline: none;
+  border: none;
+  border: solid 2px rgb(206, 206, 206);
+  background-color: transparent;
+  margin-top: 20px;
+  color: rgb(206, 206, 206);
+  transition: 0.3s;
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+
+button:hover {
+  background-color: rgba(206, 206, 206, 1);
+  color: rgb(214, 2, 90);
+  width: 320px;
+}

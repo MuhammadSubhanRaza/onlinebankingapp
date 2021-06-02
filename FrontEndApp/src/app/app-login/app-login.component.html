@@ -1,0 +1,46 @@
+<div class="mainLoginScreenContainer">
+
+    <div class="loginInner">
+
+        <div class="firstHalf">
+            <h1>Online Banking App</h1>
+            <span>An Ultimate Banking Solution</span>
+        </div>
+        <div class="loginContainer">
+            <div class="loginCardHeader">
+                <br>
+                <img src="./../../assets/logo2.png" alt="">
+                <div class="mat-title loginTitle">LOGIN</div>
+                <!-- <div class="mat-subheading-1">An Ultimate Banking Solution</div> -->
+            </div>
+
+            <div class="loginForm">
+                <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker appearance="outline">
+                    <mat-label>User Name</mat-label>
+                    <input matInput required [(ngModel)]="loginUserName">
+                </mat-form-field>
+                <mat-form-field floatLabel="auto" color="warn" hideRequiredMarker appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input type="password" matInput required [(ngModel)]="loginUserPassword">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Login Type</mat-label>
+                    <mat-select>
+                        <mat-option value="1">Admin</mat-option>
+                        <mat-option value="2">Employee</mat-option>
+                        <mat-option value="3">Cashier</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <br>
+                <button type="submit" (click)="onSubmit()" mat-raised-button color="primary">Login</button>
+
+                <mat-list>
+                    <mat-list><br></mat-list>
+                    <mat-divider></mat-divider>
+                    <a href="">Need any help ?</a>
+                </mat-list>
+            </div>
+
+        </div>
+    </div>
+</div>

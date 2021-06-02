@@ -1,0 +1,33 @@
+
+<div class="mainContainer">
+    <div class="hostContainer">
+        <div class="left">
+            <h2>LOGIN</h2>
+            <p>Login to your account here</p>
+            <mat-icon class="headIcon" aria-hidden="false" aria-label="Example home icon">fingerprint</mat-icon>
+            <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker appearance="outline">
+                <mat-label>User Name</mat-label>
+                <input matInput required [(ngModel)]="cstUserName">
+            </mat-form-field>
+            <mat-form-field floatLabel="auto" color="warn" hideRequiredMarker appearance="outline">
+                <mat-label>Password</mat-label>
+                <input type="password" matInput required [(ngModel)]="cstPassword">
+            </mat-form-field>
+            <button mat-raised-button color="accent" (click)="login()">
+                Sign In
+                <mat-icon aria-hidden="false" aria-label="Example home icon">login</mat-icon>
+            </button>
+            <br><br>
+            <button mat-button color="primary" >Are You Confused ?</button>
+        </div>
+        <div class="right">
+            <h1>
+                Welcome Back !
+            </h1>
+            <p>Lorem ipsum dolor sit amet ,  
+            </p>
+            <p>adipisicing elit. Modi recusandae ,</p>
+            <p>laborum voluptate</p>
+        </div>
+    </div>
+</div>

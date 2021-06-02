@@ -1,0 +1,15 @@
+.mainContainer {
+  display: flex;
+  height: 100%;
+  background-color: gray;
+}
+.first {
+  background-color: red;
+  height: 100%;
+  width: 50%;
+}
+.second {
+  background-color: yellow;
+  height: 100%;
+  width: 50%;
+}

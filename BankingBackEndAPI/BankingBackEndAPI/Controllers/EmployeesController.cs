@@ -130,5 +130,19 @@ namespace BankingBackEndAPI.Controllers
             }
         }
 
+        [Route("authenticateUser")]
+        [HttpPost]
+        public Boolean authenticateUser(Employees employees) {
+            Employees emp = this._context.Employees.Where(opt => opt.EmpUserName == employees.EmpUserName &&
+            opt.EmpPassword == employees.EmpPassword).FirstOrDefault();
+            if (emp != null)
+            {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
     }
 }

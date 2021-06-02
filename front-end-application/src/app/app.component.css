@@ -1,0 +1,21 @@
+.loaderContainer {
+  background-color: rgba(16, 13, 19, 0.8);
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  z-index: 1000;
+}
+
+.loaderSpin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+
+.loaderSpin h5 {
+  padding-top: 40px;
+  font-size: 1rem;
+}

@@ -1,0 +1,40 @@
+.innerContainer {
+  box-sizing: border-box;
+  padding: 50px;
+  width: 80%;
+  margin: auto;
+  margin-top: 0px;
+  display: flex;
+}
+
+.spacer {
+  padding: 0px 10px;
+}
+
+.block {
+  box-shadow: gray 0px 0px 10px;
+  padding: 40px;
+  text-align: center;
+}
+
+.block h1 {
+  margin: 0;
+  padding: 0;
+  padding-top: 10px;
+  color: rgb(238, 185, 11);
+  font-weight: 500;
+}
+
+.block h3 {
+  font-size: 2rem;
+}
+
+.mainIcon {
+  background-color: rgb(62, 0, 161);
+  font-size: 7rem;
+  width: inherit;
+  height: inherit;
+  padding: 25px;
+  color: white;
+  border-radius: 50%;
+}

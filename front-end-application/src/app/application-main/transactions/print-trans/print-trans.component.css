@@ -1,0 +1,23 @@
+.spacer {
+  padding: 0px 20px;
+}
+
+table {
+  width: 100%;
+}
+
+.printDivHeader {
+  text-align: center;
+  padding: 5px;
+}
+
+.printDivHeader p,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.printDivHeader h3 {
+  font-weight: 500;
+  color: orange;
+}

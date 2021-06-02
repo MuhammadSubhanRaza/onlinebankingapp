@@ -1,0 +1,174 @@
+
+  <div class="loaderContainer" *ngIf="spinnerStatus">
+    <div class="loaderSpin">
+    <mat-spinner color="accent" class="" ></mat-spinner>
+    <h5>loading...</h5>
+    </div>
+  </div>
+
+
+  <mat-sidenav-container class="myNav">
+
+    <mat-sidenav class="navArea" mode="push" #sideNav>
+      <div [hidden]="isCustomer" style="width: 300px;">
+        <div class="sidenavheader">
+          <img [src]="image" alt="">
+          <div>
+            <br>
+            <div class="mat-body-1">{{loggedInUser.userFirstName+" "+loggedInUser.userLastName}}</div>
+            <div class="mat-caption">Admin Rights</div>
+          </div>
+        </div>
+        <div>
+          <br>
+          <button class="navButtons" (click)="sideNav.toggle()" mat-button routerLink="admindashboard">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+            <span class="btnSpacer"></span>Dashboard
+          </button>
+          <button class="navButtons" mat-button (click)="sideNav.toggle()" routerLink="departments">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">apps</mat-icon>
+            <span class="btnSpacer"></span>Departments
+          </button>
+          <button class="navButtons" (click)="sideNav.toggle()" mat-button routerLink="employees">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">person</mat-icon>
+            <span class="btnSpacer"></span>Employees
+          </button>
+          <button class="navButtons" (click)="sideNav.toggle()" mat-button routerLink="customers">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">groups</mat-icon>
+            <span class="btnSpacer"></span>Customers
+          </button>
+          <button class="navButtons" (click)="sideNav.toggle()" mat-button routerLink="branch">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">apartment</mat-icon>
+            <span class="btnSpacer"></span>Branch
+          </button>
+          <button class="navButtons" (click)="sideNav.toggle()" mat-button routerLink="bankaccount">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">money</mat-icon>
+            <span class="btnSpacer"></span>Accounts
+          </button>
+          <button class="navButtons" (click)="sideNav.toggle()" mat-button routerLink="compbalance">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">account_balance</mat-icon>
+            <span class="btnSpacer"></span>check Org Balance
+          </button>
+          <button class="navButtons" (click)="sideNav.toggle()" mat-button routerLink="genertaenotification">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">notification_add</mat-icon>
+            <span class="btnSpacer"></span>Generate Notification
+          </button>
+          <button class="navButtons" (click)="sideNav.toggle()" mat-button routerLink="empsettings">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">settings</mat-icon>
+            <span class="btnSpacer"></span>Setting
+          </button>
+        
+        
+        </div>
+      </div> 
+      
+      <div class="CustNav" [hidden]="!isCustomer">
+        <br>
+        <button mat-button (click)="sideNav.toggle()" class="custNavButtons" routerLink="customerdashboard">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">dashboard</mat-icon>
+            <br>
+            DASHBOARD
+        </button>
+        <br>
+        <button mat-button class="custNavButtons" (click)="sideNav.toggle()" routerLink="transaction">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">autorenew</mat-icon>
+          <br>
+            TRANSACTIONS
+        </button>
+        <br>
+        <button mat-button class="custNavButtons" (click)="sideNav.toggle()" routerLink="custsettings">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">engineering</mat-icon>
+          <br>
+          SETTINGS
+        </button>
+        <br>
+        <button mat-button class="custNavButtons" (click)="sideNav.toggle()" routerLink="loanapplication">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">paid</mat-icon>
+          <br>
+          LOAN
+        </button>
+        <br>
+        <button mat-button class="custNavButtons" >
+          <mat-icon aria-hidden="false" aria-label="Example home icon">account_balance</mat-icon>
+          <br>
+          ACCOUNT INFO
+        </button>
+      </div>
+    </mat-sidenav>
+
+
+
+    
+
+
+
+    <mat-sidenav-content class="navContentArea">
+
+
+
+      
+      <mat-toolbar color="primary">
+        <div>
+          <h3 class="mat-body-2">ONLINE BANKING APP</h3>
+          <div class="mat-caption appSubTitle">An Ultimate Banking Solution </div>
+        </div>
+        <span class="example-spacer"></span>
+        <div class="notificationArea">
+
+          <img [src]="image" alt="">
+          <p>{{loggedInUser.userFirstName+" "+loggedInUser.userLastName}}</p>
+
+
+          <button mat-icon-button color="accent" matTooltip="Updates">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">email</mat-icon>
+          </button>
+          <span matBadge="5" matBadgePosition="above after">
+          </span>
+          <button mat-icon-button color="accent" matTooltip="Alerts">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">report</mat-icon>
+          </button>
+          <span matBadge="5" matBadgePosition="above after">
+          </span>
+          <button mat-icon-button color="accent" routerLink="notifications" matTooltip="Notifications">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">notifications</mat-icon>
+          </button>
+          <span matBadge="5" class="badgeIndicator" matBadgePosition="above after">
+          </span>
+          <button [matMenuTriggerFor]="menu" mat-icon-button color="accent">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="navigateSettings()">
+              <mat-icon aria-hidden="false" aria-label="Example home icon">manage_accounts</mat-icon>
+              Settings
+            </button>
+            <button mat-menu-item (click)="logout()">
+              <mat-icon aria-hidden="false" aria-label="Example home icon">logout</mat-icon>
+              Logout
+            </button>
+          </mat-menu>
+        </div>
+      </mat-toolbar>
+
+
+
+      
+
+
+      <mat-toolbar class="navBtnBar">
+        <button mat-button color="primary" (click)="sideNav.toggle()">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">menu</mat-icon>
+        </button>
+        <span class="example-spacer"></span>
+      </mat-toolbar>
+
+
+      <div class="appication-content">
+        <router-outlet></router-outlet>
+        
+      </div>
+      <app-footer></app-footer>
+      
+    </mat-sidenav-content>
+  </mat-sidenav-container> 
+  
