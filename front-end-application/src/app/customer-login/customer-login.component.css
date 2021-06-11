@@ -1,76 +1,68 @@
 .mainContainer {
+  background-color: rgb(226, 226, 226);
   height: 100%;
-  position: relative;
-  background-color: rgb(219, 219, 219);
 }
 
-.hostContainer {
-  display: flex;
-  height: 450px;
-  width: 60%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: whitesmoke;
-  box-shadow: rgb(167, 166, 166) 0px 15px 15px;
-}
-
-.right {
-  height: inherit;
-  width: 50%;
-  background-color: rgb(64, 0, 184);
-  background-image: url("./../../assets/imgVecorS.png");
-  background-size: contain;
-  padding: 35px;
-  box-sizing: border-box;
-  text-align: left;
-  color: rgb(224, 223, 223);
-}
-
-.left {
-  height: inherit;
-  width: 50%;
-  background-color: transparent;
-  padding: 35px;
-  box-sizing: border-box;
+.loginForm {
+  /* background-color: rgb(224, 224, 224); */
+  height: 400px;
+  width: 400px;
+  margin: auto;
   text-align: center;
 }
 
-.left h2 {
-  letter-spacing: 3px;
-  text-align: left;
-  padding: 0;
-  margin: 0;
-  border-bottom: solid 2px rgb(201, 201, 201);
-  width: 100px;
-}
-.left p {
-  padding: 0;
-  margin: 0;
-  text-align: left;
-  margin-bottom: 10px;
-  padding-top: 6px;
-}
-
-mat-form-field {
+.loginForm mat-form-field {
   width: 100%;
 }
-
-button {
-  width: 80%;
+.btnLogin {
+  width: 100%;
+  font-size: 1rem;
+  border-radius: 0px;
+  padding: 5px;
+  background-color: rgb(105, 0, 204);
+  color: white;
 }
 
-.headIcon {
-  font-size: 2.5rem;
-  color: rgb(73, 0, 168);
-  padding-bottom: 20px;
+.loginForm img {
+  width: 40px;
+  margin-top: 40px;
 }
-
-.right h1 {
-  padding-top: 100px;
+.loginForm table {
+  margin: auto;
 }
-.right p {
+.loginForm table h3 {
+  padding-top: 20px;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+.loginForm p {
   margin: 0;
   padding: 0;
+  color: rgb(112, 112, 112);
+}
+
+.loginForm a {
+  text-decoration: none;
+  color: blue;
+}
+
+.verticalSpacer {
+  display: block;
+  padding: 20px 0px;
+}
+
+.errorNotification {
+  background-color: rgb(184, 0, 0);
+  color: white;
+  /* padding: 10px; */
+  width: 20%;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  bottom: 15px;
+  transform: translateX(-50%);
+}
+
+.iconError {
+  padding-top: 10px;
 }

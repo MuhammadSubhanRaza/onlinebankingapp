@@ -37,16 +37,41 @@ namespace BankingBackEndAPI.Controllers
         [Route("getcustomers")]
         public IEnumerable<Customer> GetCustomers()
         {
-            List<Customer> customers = this._context.Customer.ToList();
+            IEnumerable<Customer> customers = this._context.Customer.ToList().TakeLast(10);
             return customers;
         }
 
-        //[HttpPost]
-        //[Route("getbargraphdata")]
-        //public IActionResult GetBarGraphData()
-        //{
-        //    this._context.Account.GroupBy(a => a.AccDateOfOpening).ToList();
-        //}
+        [HttpGet]
+        [Route("getbargraphdata")]
+        public IActionResult GetBarGraphData()
+        {
+            var data = this._context.Account.GroupBy(a => a.AccDateOfOpening).Select(s=> new { 
+                date = s.Key,
+                val = s.Sum(v=>v.AccOpeningBalance)
+            });
+
+            return Ok(new { graphData = data });
+        }
+
+        [HttpGet]
+        [Route("getrequestnotificationnumbers")]
+        public int GetRequestNotificationNumbers()
+        {
+            int count = this._context.LoanApplications.Where(a =>
+            a.LoanIsAccepted == false).Count();
+
+            return count;
+        }
+
+        [HttpGet]
+        [Route("getcomplaintscounter")]
+        public int GetComplaintsCounter()
+        {
+            int count = this._context.Complaints.Where(a =>
+            a.CompStatus == false).Count();
+
+            return count;
+        }
 
 
     }

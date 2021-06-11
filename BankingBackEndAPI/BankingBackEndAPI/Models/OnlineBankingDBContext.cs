@@ -249,11 +249,10 @@ namespace BankingBackEndAPI.Models
 
                 entity.Property(e => e.LoanDateOfTransfer).HasColumnType("date");
 
-                entity.HasOne(d => d.LoanCustomer)
+                entity.HasOne(d => d.LoanAccouont)
                     .WithMany(p => p.Loan)
-                    .HasForeignKey(d => d.LoanCustomerId)
-                    .OnDelete(DeleteBehavior.SetNull)
-                    .HasConstraintName("FK__Loan__LoanCustom__38996AB5");
+                    .HasForeignKey(d => d.LoanAccouontId)
+                    .HasConstraintName("FK__Loan__LoanAccouo__5EBF139D");
             });
 
             modelBuilder.Entity<LoanApplications>(entity =>

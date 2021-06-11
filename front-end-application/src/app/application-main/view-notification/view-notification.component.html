@@ -1,18 +1,20 @@
 
+<h3>N O T I F I C A T I O N S</h3>
+
 <div class="mainContainer">
         <mat-accordion multi="true" hideToggle>
 
-            <mat-expansion-panel>
+            <mat-expansion-panel *ngFor="let item of allUnreadNotifications">
                 <mat-expansion-panel-header class="panelHeader">
                     <mat-panel-title>
                         <img src="./../../../assets/logo2.png" alt="">
-                        <h3>ISB-7894651379-78945-10065</h3>
+                        <h3>{{item.notSubject}}</h3>
                     </mat-panel-title>
                     <mat-panel-description>
-                        <h3>Monday 22 April 2021</h3>
+                        <h3>{{item.notDate}}</h3>
                         <mat-chip-list>
                             <mat-chip color="warn" selected>
-                                <mat-icon aria-hidden="false" style="font-size: 1.3rem;padding-right: 10px;" aria-label="Example home icon">star</mat-icon>
+                                <!-- <mat-icon aria-hidden="false" style="font-size: 1.3rem;padding-right: 10px;" aria-label="Example home icon">star</mat-icon> -->
                                 New
                             </mat-chip>
                         </mat-chip-list>
@@ -22,10 +24,10 @@
                 <div class="panelBorder"></div>
                 <br>
 
-                <h2>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto laudantium autem minima quibusdam libero. Accusantium perferendis ducimus dolorum nulla necessitatibus!</h2>
+                <h2>{{item.notBody}}</h2>
 
                 <mat-action-row>
-                    <button mat-raised-button>
+                    <button mat-raised-button (click)="onRead(item)">
                         Mark as Read
                         <mat-icon aria-hidden="false" aria-label="Example home icon">check_circle</mat-icon>
                     </button>

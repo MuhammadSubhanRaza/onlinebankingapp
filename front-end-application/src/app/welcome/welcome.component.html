@@ -1,14 +1,33 @@
 
 
 <div class="mainContainer">
-    <div class="hostContainer">
-        <img src="./../../assets/logo2.png" alt="">
-        <h1>
-            ONLINE BANKING APP
-        </h1>
-        <h5>An Ultimate Banking Solution</h5>
-        <h4>Select Login Mode</h4>
-        <br>
+    <div id="left" [ngClass]="defaultClass">
+        <div class="contentSection animate__animated animate__fadeInDown">
+            <img src="./../../assets/logo2.png" alt="">
+            <h2 >Online banking application</h2>
+            <h6>An Ultimate Banking Solution</h6>
+            <ul>
+                <li>Operating Systems Controls / Access Rights Management</li>
+                <li>Remote Access</li>
+                <li>Intrusion Detection System (IDS) / Intrusion Prevention System (IPS)</li>
+                <li>Physical Access</li>
+                <li>Training / Traceability / Encryption</li>
+            </ul>
+
+            <br><br>
+            <div class="glowContainer">
+                <button class="btnReadMore" type="button" (click)="onChangeStyle()" mat-button color="accent">
+                    >>
+                </button>
+                <div class="glow"></div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div id="right" [ngClass]="defaultClassRight">
+        <mat-icon aria-hidden="false" class="iconSliderHeader" aria-label="Example home icon">switch_left</mat-icon>
+        <h2>Login Mode</h2>
         <button mat-button class="btnAdminLogin" (click)="onAdminClick()">
             <mat-icon aria-hidden="false" aria-label="Example home icon">admin_panel_settings</mat-icon>
             ADMIN
@@ -18,6 +37,13 @@
             <mat-icon aria-hidden="false" aria-label="Example home icon">portrait</mat-icon>
             CONSUMER
         </button>
+
+        <div class="builderCaption">
+            <p>&#169; {{currentYear}} Copyright <strong>Onlinebankingapp.org</strong></p>
+            <p><b>Developed by:</b> Muhammad Subhan Raza | Moiz Madni | Zeeshan Imran</p>
+        </div>
     </div>
 </div>
+
+
 

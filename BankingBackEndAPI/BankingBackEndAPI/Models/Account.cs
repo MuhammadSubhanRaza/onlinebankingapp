@@ -9,6 +9,11 @@ namespace BankingBackEndAPI.Models
 {
     public partial class Account
     {
+        public Account()
+        {
+            Loan = new HashSet<Loan>();
+        }
+
         public int AccId { get; set; }
         public int? AccCustomerId { get; set; }
         public byte? AccType { get; set; }
@@ -23,5 +28,6 @@ namespace BankingBackEndAPI.Models
         public virtual Branch AccBranch { get; set; }
         public virtual Customer AccCustomer { get; set; }
         public virtual AccountsType AccTypeNavigation { get; set; }
+        public virtual ICollection<Loan> Loan { get; set; }
     }
 }

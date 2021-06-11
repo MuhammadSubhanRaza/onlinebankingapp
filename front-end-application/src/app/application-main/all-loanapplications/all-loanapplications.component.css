@@ -1,0 +1,145 @@
+.mainContainer {
+  display: flex;
+  height: 100%;
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
+.listView {
+  width: 400px;
+  min-height: 450px;
+  padding: 25px;
+  box-sizing: border-box;
+  /* border-right: solid 2px rgb(219, 219, 219); */
+}
+
+.listContainer {
+  height: 400px;
+  overflow-y: scroll;
+}
+
+.applicationButton {
+  padding: 10px;
+  width: 100%;
+}
+
+.applicationButton span {
+  font-size: 1.2rem;
+  color: whitesmoke;
+  width: 50px;
+  height: 50px;
+  display: block;
+  font-weight: 500;
+  text-align: center;
+  padding-top: 8px;
+  box-sizing: border-box;
+  background-color: rgb(61, 0, 175);
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.applicationButton table td h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.applicationButton table td {
+  padding: 0;
+  margin: 0;
+}
+
+.applicationButton table td p {
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.requesterBio {
+  width: 35%;
+  min-height: 450px;
+  box-sizing: border-box;
+  border-right: solid 2px rgb(219, 219, 219);
+  padding: 25px;
+}
+
+.requesterBio img {
+  width: 100px;
+  height: 100px;
+  border-radius: 15px;
+}
+
+.headerTable h1 {
+  margin: 0;
+  padding: 0;
+  padding-left: 10px;
+}
+
+.headerTable h4 {
+  margin: 0;
+  padding: 0;
+  padding-left: 10px;
+}
+
+.headerTable h3 {
+  font-weight: 500;
+  letter-spacing: 2px;
+  padding-left: 10px;
+  color: rgb(70, 0, 184);
+}
+
+.bodyTable {
+  margin-top: 25px;
+  color: rgb(107, 107, 107);
+  width: 100%;
+}
+
+.bodyTable h4 {
+  margin: 0;
+  padding: 0;
+  color: rgb(49, 49, 49);
+  font-weight: 500;
+}
+
+.bodyTable span {
+  display: inline;
+  color: rgb(129, 129, 129);
+}
+
+.bodyTable td {
+  padding: 2px 0px;
+  text-align: left;
+}
+
+.tableIcon {
+  /* background-color: rgb(241, 189, 19); */
+  background-color: rgb(255, 115, 0);
+  padding: 5px;
+  border-radius: 50%;
+  color: rgb(255, 255, 255);
+  margin-right: 10px;
+}
+
+.formView {
+  padding: 25px;
+  box-sizing: border-box;
+  width: 35%;
+}
+
+.formView p {
+  background-color: rgb(255, 255, 255);
+  padding: 8px;
+  width: 100%;
+  font-weight: 500;
+}
+
+.formView div {
+  background-color: rgb(241, 241, 241);
+}
+
+.formView button {
+  margin-left: 10px;
+}

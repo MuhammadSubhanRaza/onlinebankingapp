@@ -84,7 +84,7 @@ button {
 }
 
 .firstHalf h1 {
-  color: rgb(218, 58, 138);
+  color: rgb(56, 0, 211);
   font-size: 2rem;
   padding: 0;
   margin: 0;
@@ -126,4 +126,13 @@ button {
   padding: 0;
   margin: 0;
   font-size: 1rem;
+}
+
+.verticalSpacer {
+  display: block;
+  padding: 5px 0px;
+}
+
+a {
+  color: blue;
 }

@@ -1,1 +1,111 @@
-<p>cust-settings works!</p>
+
+
+<div class="mainContainer">
+    <div class="sideBar">
+        <img src="./../../../assets/person.jpg" alt="">
+        <h1>{{custLogin.custFirstName+" "+custLogin.custLastName}}</h1>
+        <h4>{{custLogin.custEmail}}</h4>
+        <h4>{{accDetails.accTypeNavigation.actypeName}}</h4>
+        <br><br>
+
+        <div>
+            <canvas id="canvas" class="leftCan">{{leftChart}}</canvas>
+        </div>
+        
+    </div>
+
+    <div class="settingsContent">
+        <h2>PROFILE</h2>
+        <br>
+        <table>
+            <tr>
+                <td>
+                    <label>First Name</label>
+                    <h3 class="fieldData">
+                        <mat-icon aria-hidden="false" class="fieldIcons" aria-label="Example home icon">person</mat-icon>
+                        {{custLogin.custFirstName}}
+                    </h3>
+                </td>
+                <td>
+                    <label>Last Name</label>
+                    <h3 class="fieldData">
+                        <mat-icon aria-hidden="false" class="fieldIcons" aria-label="Example home icon">person</mat-icon>
+                        {{custLogin.custLastName}}
+                    </h3>
+                </td>
+                <td>
+                    <label>Contact</label>
+                    <h3 class="fieldData">
+                        <mat-icon aria-hidden="false" class="fieldIcons" aria-label="Example home icon">phone</mat-icon>
+                        {{custLogin.custContact}}
+                    </h3>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Email</label>
+                    <h3 class="fieldData">
+                        <mat-icon aria-hidden="false" class="fieldIcons" aria-label="Example home icon">email</mat-icon>
+                        {{custLogin.custEmail}}
+                    </h3>
+                </td>
+                <td>
+                    <label>Address</label>
+                    <h3 class="fieldData">
+                    <mat-icon aria-hidden="false" class="fieldIcons" aria-label="Example home icon">home</mat-icon>
+                        {{custLogin.custAddress}}
+                    </h3>
+                </td>
+                <td>
+                    <label>CNIC</label>
+                    <h3 class="fieldData">
+                        <mat-icon aria-hidden="false" class="fieldIcons" aria-label="Example home icon">fingerprint</mat-icon>
+                        {{custLogin.custNic}}
+                    </h3>
+                </td>
+            </tr>
+        </table>
+        <h2>ACCOUNT DETAILS</h2>
+
+        <table>
+            <tr>
+                <td>
+                    <label>Account #</label>
+                    <h3 class="fieldData">{{accDetails.accAccountCode}}</h3>
+                </td>
+                <td>
+                    <label>User Login Name</label>
+                    <h3 class="fieldData">{{accDetails.accLoginName}}</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>New Password</mat-label>
+                        <input type="password" matInput [(ngModel)]="newPassword">
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Confirm Password</mat-label>
+                        <input type="password" matInput [(ngModel)]="confirmPassword">
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Old Password</mat-label>
+                        <input type="password" matInput [(ngModel)]="oldPassword">
+                    </mat-form-field>
+                </td>
+                <td>
+                    <button mat-raised-button color="primary" (click)="onSubmit()">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon">save</mat-icon>
+                        Save
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

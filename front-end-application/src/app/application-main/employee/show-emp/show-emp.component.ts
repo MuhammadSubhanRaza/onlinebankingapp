@@ -25,11 +25,17 @@ export class ShowEmpComponent implements OnInit {
 
   constructor(private router : Router ,private dataService:DataSharingService ,private snackBar : MatSnackBar ,private dialog:MatDialog,private service:SharedService) { 
     this.loadEmployees()
+    this.dataService.isUpdate = false
     this.imagePath = this.service.photoURL
     if(this.dataService.updateflag)
     {
       this.snackBar.open("Employee Data Modified Successfully!","Okay",{duration:3000})
       this.dataService.updateflag = false
+    }
+    else if(this.dataService.insertFlag)
+    {
+      this.snackBar.open("New Employee has been added Successfully!","Okay",{duration:3000})
+      this.dataService.insertFlag = false
     }
   }
 

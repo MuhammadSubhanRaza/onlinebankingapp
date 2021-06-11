@@ -150,3 +150,6 @@ C:\Users\Muhammad Subhan Raza\Desktop\OnlineBankingApp\onlinebankingapp\BankingB
 C:\Users\Muhammad Subhan Raza\Desktop\OnlineBankingApp\onlinebankingapp\BankingBackEndAPI\BankingBackEndAPI\obj\Debug\netcoreapp3.1\BankingBackEndAPI.RazorTargetAssemblyInfo.cs
 C:\Users\Muhammad Subhan Raza\Desktop\OnlineBankingApp\onlinebankingapp\BankingBackEndAPI\BankingBackEndAPI\obj\Debug\netcoreapp3.1\BankingBackEndAPI.Views.pdb
 C:\Users\Muhammad Subhan Raza\Desktop\OnlineBankingApp\onlinebankingapp\BankingBackEndAPI\BankingBackEndAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Muhammad Subhan Raza\Desktop\OnlineBankingApp\onlinebankingapp\BankingBackEndAPI\BankingBackEndAPI\bin\Debug\netcoreapp3.1\MailKit.dll
+C:\Users\Muhammad Subhan Raza\Desktop\OnlineBankingApp\onlinebankingapp\BankingBackEndAPI\BankingBackEndAPI\bin\Debug\netcoreapp3.1\MimeKit.dll
+C:\Users\Muhammad Subhan Raza\Desktop\OnlineBankingApp\onlinebankingapp\BankingBackEndAPI\BankingBackEndAPI\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll

@@ -35,7 +35,6 @@ export class AddEditEmpComponent implements OnInit {
     }
     this.loadDepartmentsList()
     this.initializeForm()
-   
   }
 
   ngOnInit(): void {
@@ -86,17 +85,18 @@ export class AddEditEmpComponent implements OnInit {
               empSalary : this.employeeForm.controls['txtSalary'].value,
               empImagePath : this.photoFileName
             }
-      if(!this.dataService.isUpdate){
-        this.service.addEmployee(val).subscribe(data=>{
-          this.snackbar.open("New Employee Added Successfully!","Okay",{duration:3000})
+      if(this.dataService.isUpdate){
+         this.service.updateEmployee(val).subscribe(data=>{
+          this.dataService.isUpdate=false;
+          this.dataService.data = null
+          this.dataService.updateflag = true
+          this.router.navigate(['onlinebanking/employees/view'])
         })
       }
       else
       {
-        this.service.updateEmployee(val).subscribe(data=>{
-          this.dataService.isUpdate=false;
-          this.dataService.data = null
-          this.dataService.updateflag = true
+       this.service.addEmployee(val).subscribe(data=>{
+          this.dataService.insertFlag = true
           this.router.navigate(['onlinebanking/employees/view'])
         })
       }

@@ -1,0 +1,81 @@
+.mainContainer {
+  display: flex;
+  height: 100%;
+}
+
+.sideBar {
+  width: 350px;
+  min-height: 500px;
+  border-right: solid 2px rgb(175, 175, 175);
+  text-align: center;
+}
+
+.sideBar ul li {
+  text-align: left;
+  padding: 5px;
+  display: block;
+}
+
+.sideBar img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-top: 20px;
+}
+
+.sideBar h1 {
+  padding: 0;
+  margin: 0;
+  padding-top: 15px;
+}
+
+.sideBar h4 {
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+}
+
+.settingsContent {
+  box-sizing: border-box;
+  padding-left: 40px;
+  width: 70%;
+}
+
+.settingsContent h2 {
+  letter-spacing: 3px;
+  font-weight: 500;
+  color: orange;
+}
+
+.settingsContent table {
+  width: 100%;
+}
+
+.settingsContent table td {
+  padding: 5px;
+}
+
+.fieldData {
+  background-color: rgb(242, 242, 242);
+  padding: 5px;
+  letter-spacing: 2px;
+}
+mat-form-field {
+  width: 100%;
+}
+
+.settingsContent button {
+  width: 100%;
+}
+
+.fieldIcons {
+  /* background-color: rgb(101, 0, 216); */
+  color: rgb(179, 179, 179);
+}
+
+.barIcons {
+  background-color: orange;
+  padding: 5px;
+  border-radius: 50%;
+  margin-right: 10px;
+}

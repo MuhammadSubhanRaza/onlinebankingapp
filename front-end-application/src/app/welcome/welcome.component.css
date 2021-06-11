@@ -1,62 +1,191 @@
 .mainContainer {
-  height: 100%;
-  background-image: url("./../../assets/loginback3.jpg");
-  background-size: cover;
+  display: flex;
+  height: 100vh;
 }
-.hostContainer {
-  height: inherit;
-  background-color: rgba(26, 1, 46, 0.8);
+
+.captionSection {
+  width: 100%;
+  background-color: rgb(49, 0, 128);
+  transition: 0.3s;
+}
+
+.captionSectionChange {
+  width: 60%;
+  background-color: rgb(49, 0, 128);
+  transition: 0.3s;
+}
+
+.captionSectionChange img {
+  width: 60px;
+  margin-top: 50px;
+}
+
+.modeSection {
+  background-color: rgb(240, 240, 240);
+  width: 0%;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.modeSectionChange {
+  background-color: rgb(243, 243, 243);
+  transition: 0.3s;
+  width: 40%;
+}
+
+.captionSection img {
+  width: 60px;
+  margin-top: 50px;
+}
+
+.contentSection {
   text-align: center;
 }
 
-.hostContainer h1 {
-  letter-spacing: 3px;
+.contentSection h2 {
+  color: whitesmoke;
   font-size: 2rem;
-  color: rgb(245, 80, 171);
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  padding-top: 10px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding-top: 40px;
 }
 
-.hostContainer h5 {
-  color: rgb(236, 236, 236);
+.contentSection h6 {
+  color: rgb(255, 180, 20);
+  font-size: 1rem;
+  letter-spacing: 3px;
+}
+.contentSection ul {
+  padding-top: 40px;
+}
+
+.contentSection ul li {
+  display: block;
+  color: rgb(224, 224, 224);
+  font-size: 1rem;
   text-align: center;
-  padding: 0;
-  margin: 0;
+  padding-top: 15px;
+  padding-left: -50px;
   letter-spacing: 2px;
-  padding-top: 4px;
 }
-.hostContainer h4 {
-  color: rgb(207, 207, 207);
-  font-size: 1.5rem;
-  padding: 0;
-  margin: 0;
-  padding-top: 55px;
-  text-align: center;
+
+.modeSection h2 {
+  font-size: 1.8rem;
+  margin: 150px 0px 10px 50px;
+  padding-bottom: 10px;
+  letter-spacing: 3px;
+  border-bottom: solid 2px rgb(153, 0, 255);
+  width: 190px;
+  color: rgb(214, 214, 214);
 }
-img {
-  width: 70px;
-  height: 70px;
+
+.modeSectionChange h2 {
+  font-size: 1.8rem;
+  margin: 50px 0px 10px 50px;
+  padding-bottom: 10px;
+  letter-spacing: 3px;
+  /* border-bottom: solid 2px rgb(255, 187, 0); */
+  width: 190px;
+  color: rgb(93, 93, 93);
+}
+
+.btnAdminLogin {
+  font-size: 1rem;
+  /* background-color: rgb(243, 186, 0); */
+  border: 2px solid rgb(0, 123, 194);
+  margin-left: 50px;
+  width: 80%;
+  padding: 8px;
+  transition: 0.3s;
+  color: rgb(0, 123, 194);
+  font-weight: 600;
   margin-top: 25px;
 }
-
-button {
-  width: 300px;
-  height: 80px;
-  outline: none;
-  border: none;
-  border: solid 2px rgb(206, 206, 206);
-  background-color: transparent;
-  margin-top: 20px;
-  color: rgb(206, 206, 206);
-  transition: 0.3s;
-  cursor: pointer;
-  font-size: 1.4rem;
+.btnAdminLogin:hover {
+  /* box-shadow: rgb(9, 0, 31) 5px 12px 7px; */
+  background-color: rgb(0, 123, 194);
+  color: whitesmoke;
 }
 
-button:hover {
-  background-color: rgba(206, 206, 206, 1);
-  color: rgb(214, 2, 90);
-  width: 320px;
+.btnCustomerLogin {
+  font-size: 1rem;
+  /* background-color: rgb(243, 186, 0); */
+  border: 2px solid rgb(0, 123, 194);
+  margin-left: 50px;
+  width: 80%;
+  padding: 8px;
+  margin-top: 40px;
+  transition: 0.3s;
+  font-weight: 600;
+  color: rgb(0, 123, 194);
+}
+
+.btnCustomerLogin:hover {
+  /* box-shadow: rgb(9, 0, 31) 5px 12px 7px; */
+  background-color: rgb(0, 123, 194);
+  color: whitesmoke;
+  border: 2px solid rgb(0, 123, 194);
+}
+
+.builderCaption p {
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+.builderCaption {
+  position: absolute;
+  left: 15px;
+  bottom: 10px;
+  color: rgb(197, 197, 197);
+}
+
+.btnReadMore {
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: 600;
+  width: 70px;
+  height: 70px;
+  margin-top: 0;
+  border: 3px solid whitesmoke;
+  z-index: 100;
+}
+
+.glowContainer {
+  width: 70px;
+  height: 70px;
+  margin: 0;
+  padding: 0;
+  margin: auto;
+  position: relative;
+}
+
+.glow {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(251, 251, 251, 0.767);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: myAnimation 1s infinite;
+}
+
+.iconSliderHeader {
+  color: orange;
+  font-size: 8rem;
+  padding-left: 190px;
+}
+
+@keyframes myAnimation {
+  0% {
+    width: 0px;
+    height: 0px;
+  }
+  100% {
+    width: 70px;
+    height: 70px;
+    opacity: 0;
+  }
 }

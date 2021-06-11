@@ -3,7 +3,8 @@
 @include mat-core();
 
 $my-primary: mat-palette($mat-deep-purple, 500);
-$my-accent: mat-palette($mat-amber, 500);
+$my-accent: mat-palette($mat-light-blue, 500);
+// $my-accent: mat-palette($mat-amber, 500);
 
 $my-theme: mat-light-theme($my-primary, $my-accent);
 

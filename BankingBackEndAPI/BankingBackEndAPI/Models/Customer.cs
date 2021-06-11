@@ -13,7 +13,6 @@ namespace BankingBackEndAPI.Models
         {
             Account = new HashSet<Account>();
             Complaints = new HashSet<Complaints>();
-            Loan = new HashSet<Loan>();
             LoanApplications = new HashSet<LoanApplications>();
         }
 
@@ -33,7 +32,6 @@ namespace BankingBackEndAPI.Models
         public virtual City CustCityNavigation { get; set; }
         public virtual ICollection<Account> Account { get; set; }
         public virtual ICollection<Complaints> Complaints { get; set; }
-        public virtual ICollection<Loan> Loan { get; set; }
         public virtual ICollection<LoanApplications> LoanApplications { get; set; }
     }
 }

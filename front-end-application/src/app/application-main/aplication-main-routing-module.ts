@@ -4,12 +4,15 @@ import { Routes,RouterModule } from '@angular/router';
 import { AuthGuard } from '../guard/auth-guard.service';
 import { EmpAuthGuard } from '../guard/emp-auth-guardservice';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { AllLoanapplicationsComponent } from './all-loanapplications/all-loanapplications.component';
 import { ApplicationMainComponent } from './application-main.component';
 import { AddeditBankaccountComponent } from './bankaccount/addedit-bankaccount/addedit-bankaccount.component';
 import { BankaccountComponent } from './bankaccount/bankaccount.component';
 import { ShowBankaccountComponent } from './bankaccount/show-bankaccount/show-bankaccount.component';
 import { BranchComponent } from './branch/branch.component';
 import { ViewBalanceComponent } from './company-balance/view-balance/view-balance.component';
+import { ComplaintMakeComponent } from './complaint-make/complaint-make.component';
+import { ComplaintViewComponent } from './complaint-view/complaint-view.component';
 import { CustDashboardComponent } from './cust-dashboard/cust-dashboard.component';
 import { CustSettingsComponent } from './cust-settings/cust-settings.component';
 import { AddeditCustComponent } from './customer/addedit-cust/addedit-cust.component';
@@ -21,6 +24,7 @@ import { AddEditEmpComponent } from './employee/add-edit-emp/add-edit-emp.compon
 import { EmployeeComponent } from './employee/employee.component';
 import { ShowEmpComponent } from './employee/show-emp/show-emp.component';
 import { GenerateNotificationComponent } from './generate-notification/generate-notification.component';
+import { GiveLoanComponent } from './give-loan/give-loan.component';
 import { LoanApplicationComponent } from './loan-application/loan-application.component';
 import { MasterComponent } from './master/master.component';
 import { MakeTransComponent } from './transactions/make-trans/make-trans.component';
@@ -54,6 +58,10 @@ const routes : Routes = [
         {path:"customerdashboard",component:CustDashboardComponent},
         {path:"notifications",component:ViewNotificationComponent},
         {path:"compbalance",component:ViewBalanceComponent},
+        {path:"makecomplaint",component:ComplaintMakeComponent},
+        {path:"viewcomplaint",component:ComplaintViewComponent},
+        {path:"giveloan",component:GiveLoanComponent},
+        {path:"allloanapplications",component:AllLoanapplicationsComponent},
         {path:"genertaenotification",component:GenerateNotificationComponent,canActivate:[EmpAuthGuard]},
         {path:"transaction",component:TransactionsComponent,children:[
           {path:"make",component:MakeTransComponent},

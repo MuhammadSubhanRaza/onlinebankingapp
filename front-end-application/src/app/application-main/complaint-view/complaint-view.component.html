@@ -1,0 +1,41 @@
+
+<h3>C O M P L A I N T S</h3>
+
+<div class="mainContainer">
+    <mat-accordion multi="true" hideToggle>
+
+        <mat-expansion-panel *ngFor="let item of allUnreadComplaints">
+            <mat-expansion-panel-header class="panelHeader">
+                <mat-panel-title>
+                    <img src="{{imageUrl+item.compCust.custImagePath}}" alt="">
+                    <h3>{{item.compCust.custFirstName+" "+item.compCust.custLastName}}</h3>
+                </mat-panel-title>
+                <mat-panel-description>
+                    <h3>{{item.compCust.custEmail}}</h3>
+                    <mat-chip-list>
+                        <mat-chip color="warn" selected>
+                            <!-- <mat-icon aria-hidden="false" style="font-size: 1.3rem;padding-right: 10px;" aria-label="Example home icon">star</mat-icon> -->
+                            Not Solved Yet
+                        </mat-chip>
+                    </mat-chip-list>
+
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div class="panelBorder"></div>
+            <br>
+
+            <h2>{{item.compMatter}}</h2>
+
+            <mat-action-row>
+                <button mat-raised-button (click)="onSolved(item)">
+                    Issue Solved
+                    <mat-icon aria-hidden="false" aria-label="Example home icon">check_circle</mat-icon>
+                </button>
+            </mat-action-row>
+        </mat-expansion-panel>
+
+    </mat-accordion>
+</div>
+
+
+

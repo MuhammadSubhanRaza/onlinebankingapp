@@ -1,0 +1,130 @@
+<!-- 
+<h3>
+    <mat-icon aria-hidden="false" aria-label="Example home icon">request_page</mat-icon>
+    Loan Applications
+</h3> -->
+
+<div class="mainContainer">
+    <div class="listView">
+        <div class="listContainer">
+            <button class="applicationButton" (click)="populateDataFromList(item)" mat-button *ngFor="let item of allApplications">
+                <table>
+                    <tr>
+                        <td>
+                            <span>{{item.loanAppCust.custFirstName[0]}}</span>
+                        </td>
+                        <td>
+                            <h3>{{item.loanAppCust.custFirstName}}</h3>
+                            <p>{{item.loanAppMoneyAsked}}</p>
+                        </td>
+                    </tr>
+                </table>
+            </button>
+            
+        </div>
+    </div>
+
+    <div class="requesterBio">
+        <table class="headerTable animate__animated animate__fadeIn" *ngIf="applicationData!=null">
+            <tr>
+                <td>
+                    <img [src]="image" alt="">
+                </td>
+                <td>
+                    <h1>{{applicationData.loanAppCust.custFirstName+" "+applicationData.loanAppCust.custLastName}}</h1>
+                    <h4>{{applicationData.loanAppCust.custEmail}}</h4>
+                    <h3>{{accounttype}}</h3>
+                </td>
+            </tr>
+        </table>
+        <table class="bodyTable animate__animated animate__fadeIn" *ngIf="applicationData!=null">
+            <tr>
+                <td colspan="2">
+                    <h4>
+                        <mat-icon class="tableIcon" aria-hidden="false" aria-label="Example home icon">account_balance_wallet</mat-icon>
+                        <span>Account No | </span>
+                        {{accountCode}}
+                    </h4>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4>
+                        <mat-icon class="tableIcon" aria-hidden="false" aria-label="Example home icon">paid</mat-icon>
+                        <span>Balance | </span>
+                        {{accountBalance}}
+                    </h4>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4>
+                        <mat-icon class="tableIcon" aria-hidden="false" aria-label="Example home icon">email</mat-icon>
+                        <span>Email | </span>
+                        {{applicationData.loanAppCust.custEmail}}
+                    </h4>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4>
+                        <mat-icon class="tableIcon" aria-hidden="false" aria-label="Example home icon">phone</mat-icon>
+                        <span>Contact No | </span>
+                        {{applicationData.loanAppCust.custContact}}
+                    </h4>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4>
+                        <mat-icon class="tableIcon" aria-hidden="false" aria-label="Example home icon">location_city</mat-icon>
+                        <span>Address | </span>
+                        {{applicationData.loanAppCust.custAddress}}
+                    </h4>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <h4>
+                        <mat-icon class="tableIcon" aria-hidden="false" aria-label="Example home icon">fingerprint</mat-icon>
+                        <span>CNIC | </span>
+                        {{applicationData.loanAppCust.custNic}}
+                    </h4>
+                </td>
+            </tr>
+           
+        </table>
+
+    </div>
+
+    <div class="formView animate__animated animate__fadeIn" *ngIf="applicationData!=null">
+        <div class="mat-caption">SUBJECT</div>
+        <p>{{applicationData.loanAppSubject}}</p>
+
+        <div class="mat-caption">BODY</div>
+        <p>{{applicationData.loanAppBody}}</p>
+
+        <div class="mat-caption">AMOUNT</div>
+        <p>{{applicationData.loanAppMoneyAsked}}</p>
+
+        <div class="mat-caption">REASON</div>
+        <p>{{applicationData.loanReason}}</p>
+
+        <div class="mat-caption">INSTALLMENTS #</div>
+        <p>{{applicationData.loanNumberOfInstallments}}</p>
+        <br>
+        
+        <button mat-stroked-button color="warn" (click)="onReject()">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">thumb_down_alt</mat-icon>
+            Reject
+        </button>
+        <button mat-raised-button color="primary" (click)="onApprove()">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">check_circle</mat-icon>
+            Approve
+        </button>
+    </div>
+
+    
+</div>
+
+

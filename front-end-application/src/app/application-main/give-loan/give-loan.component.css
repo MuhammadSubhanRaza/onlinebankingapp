@@ -1,0 +1,27 @@
+.formSection {
+  width: 50%;
+  margin: auto;
+}
+
+.formSection mat-form-field {
+  width: 80%;
+}
+
+.formSection table td {
+  padding: 5px;
+}
+.formSection table {
+  width: 100%;
+}
+
+.fieldIcons {
+  padding: 8px;
+  background-color: orange;
+  margin-right: 10px;
+  border-radius: 50%;
+  color: rgb(87, 87, 87);
+}
+
+.formSection button {
+  margin-top: 25px;
+}

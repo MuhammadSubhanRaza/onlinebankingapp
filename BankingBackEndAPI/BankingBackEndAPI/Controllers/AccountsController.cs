@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BankingBackEndAPI.Models;
+using BankingBackEndAPI.Emails;
+using Microsoft.AspNetCore.Hosting;
 
 namespace BankingBackEndAPI.Controllers
 {
@@ -13,11 +15,14 @@ namespace BankingBackEndAPI.Controllers
     [ApiController]
     public class AccountsController : ControllerBase
     {
+        private SetEmailConfig emailConfig;
         private readonly OnlineBankingDBContext _context;
+        private readonly IWebHostEnvironment _env;
 
-        public AccountsController(OnlineBankingDBContext context)
+        public AccountsController(OnlineBankingDBContext context, IWebHostEnvironment env)
         {
             _context = context;
+            _env = env;
         }
 
         // GET: api/Accounts
@@ -77,10 +82,13 @@ namespace BankingBackEndAPI.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Account>> PostAccount(Account account)
+        public ActionResult<Account> PostAccount(Account account)
         {
             _context.Account.Add(account);
-            await _context.SaveChangesAsync();
+            Customer customer = this._context.Customer.Where(x => x.CustId == account.AccCustomerId).FirstOrDefault();
+            _context.SaveChanges();
+            this.emailConfig = new SetEmailConfig(this._env);
+            this.emailConfig.SendCustomerBankAccountGenerationEmail(account,customer);
 
             return CreatedAtAction("GetAccount", new { id = account.AccId }, account);
         }
@@ -120,6 +128,37 @@ namespace BankingBackEndAPI.Controllers
             }
 
             return cst;
+        }
+
+
+        [HttpPost]
+        [Route("getaccountfromaccountno")]
+        public Account GetAccountFromAccountNo(Account acc)
+        {
+            Account account = this._context.Account.Include("AccTypeNavigation").Where(x => x.AccAccountCode == acc.AccAccountCode).FirstOrDefault();
+            return account;
+        }
+
+        [HttpPost]
+        [Route("getbargraphdata")]
+        public IActionResult GetBarGraphData(Transactions acc)
+        {
+            var data = this._context.Transactions.Where(x=>x.TranAccountNoSender==acc.TranAccountNoSender).GroupBy(a => a.TranDate).Select(s => new {
+                date = s.Key,
+                val = s.Sum(v => v.TranAmountTransffered)
+            });
+
+            return Ok(new { graphData = data });
+        }
+
+        [HttpPost]
+        [Route("getdatathroughcustid")]
+        public IActionResult GetDataThroughCustId(Account acc)
+        {
+            var data = this._context.Account.Include("AccTypeNavigation").Where(x => 
+            x.AccCustomerId == acc.AccCustomerId).FirstOrDefault();
+
+            return Ok(new { accountData = data });
         }
 
     }

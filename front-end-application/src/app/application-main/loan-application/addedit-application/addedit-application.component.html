@@ -25,13 +25,15 @@
 
     </div>
 
+    
     <div class="fieldsContainer">
+        <form [formGroup]="applicationForm" (ngSubmit)="onSubmit()">
         <mat-icon aria-hidden="false" class="fieldIcons" aria-label="Example home icon">subject</mat-icon>
         <mat-form-field floatLabel="auto" color="primary" hideRequiredMarker>
             <mat-label>
                 Subject
             </mat-label>
-            <input matInput required>
+            <input matInput required formControlName="txtSubject" >
         </mat-form-field>
 
         <br><br>
@@ -41,7 +43,7 @@
             <mat-label>
                 Body
             </mat-label>
-            <input matInput required>
+            <input matInput required formControlName="txtBody" >
         </mat-form-field>
 
         <br><br>
@@ -51,7 +53,7 @@
             <mat-label>
                 Amount
             </mat-label>
-            <input matInput required>
+            <input matInput required formControlName="txtAmount" >
         </mat-form-field>
 
         <br><br>
@@ -60,7 +62,7 @@
 
         <mat-form-field>
             <mat-label>Reason</mat-label>
-            <mat-select>
+            <mat-select formControlName="txtReason" >
                 <mat-option value="business">Business</mat-option>
                 <mat-option value="education">Education</mat-option>
                 <mat-option value="personal">Personal</mat-option>
@@ -76,11 +78,11 @@
             <mat-label>
                 Number Of Installments
             </mat-label>
-            <input matInput required>
+            <input matInput required formControlName="txtInstallments" >
         </mat-form-field>
 
         <br><br>
-        <button mat-raised-button color="accent">
+        <button mat-raised-button color="accent" type="button">
             <mat-icon aria-hidden="false" aria-label="Example home icon">cancel</mat-icon>
             Cancel
         </button>
@@ -88,7 +90,8 @@
             Send
             <mat-icon aria-hidden="false" aria-label="Example home icon">send</mat-icon>
         </button>
-
+        </form>
     </div>
+    
 
 </div>

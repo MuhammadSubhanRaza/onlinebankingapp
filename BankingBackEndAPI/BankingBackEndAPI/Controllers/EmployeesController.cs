@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using BankingBackEndAPI.Models;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
+using BankingBackEndAPI.Emails;
 
 namespace BankingBackEndAPI.Controllers
 {   
@@ -81,10 +82,12 @@ namespace BankingBackEndAPI.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Employees>> PostEmployees(Employees employees)
+        public ActionResult<Employees> PostEmployees(Employees employees)
         {
             _context.Employees.Add(employees);
-            await _context.SaveChangesAsync();
+            _context.SaveChanges();
+            SetEmailConfig emailConfig = new SetEmailConfig(this._env);
+            emailConfig.SendCredentialsToNewlyAddedEmployee(employees);
 
             return CreatedAtAction("GetEmployees", new { id = employees.EmpId }, employees);
         }
@@ -101,6 +104,7 @@ namespace BankingBackEndAPI.Controllers
 
             _context.Employees.Remove(employees);
             await _context.SaveChangesAsync();
+
 
             return employees;
         }

@@ -24,7 +24,7 @@ namespace BankingBackEndAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Notifiacation>>> GetNotifiacation()
         {
-            return await _context.Notifiacation.ToListAsync();
+            return await _context.Notifiacation.Where(x=>x.NotHasRead==false).ToListAsync();
         }
 
         // GET: api/Notifiacations/5

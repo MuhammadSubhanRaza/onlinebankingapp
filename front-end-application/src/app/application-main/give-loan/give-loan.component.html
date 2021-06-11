@@ -1,0 +1,75 @@
+<h2>LOAN</h2>
+
+<div class="mainContainer">
+    <div class="formSection">
+        <mat-horizontal-stepper linear>
+            <mat-step label="Reciever | Amount Information" completed="true">
+                <table>
+                    <tr>
+                        <td>
+                            <mat-icon class="fieldIcons" aria-hidden="false" aria-label="Example home icon">pin</mat-icon>
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Account No</mat-label>
+                                <input [disabled]="fixedDisabled" matInput [(ngModel)]="accountNoStartingDigits">
+                            </mat-form-field>
+                        </td>
+                        <td>
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Last digits of Account No</mat-label>
+                                <input matInput [(ngModel)]="accountNoLastDigits">
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button (click)="verifyAccount()" mat-stroked-button style="margin-left: 50px;margin-top:0px;" color="primary">Verify Account Number</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <mat-icon class="fieldIcons" aria-hidden="false" aria-label="Example home icon">event</mat-icon>
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Date</mat-label>
+                                <input [disabled]="fixedDisabled" matInput [(ngModel)]="currentDate">
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <mat-icon class="fieldIcons" aria-hidden="false" aria-label="Example home icon">paid</mat-icon>
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Amount to Transfer</mat-label>
+                                <input [disabled]="changeDisabled" matInput [(ngModel)]="amountToTransfer">
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                </table>
+                <button [disabled]="changeDisabled" mat-raised-button color="primary" matStepperNext>
+                    TRANSFER
+                    <mat-icon aria-hidden="false" aria-label="Example home icon">fast_forward</mat-icon>
+                </button>
+            </mat-step>
+
+            
+            <mat-step label="Confirmation" >
+                <mat-icon class="fieldIcons" aria-hidden="false" aria-label="Example home icon">vpn_key</mat-icon>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Current Password</mat-label>
+                    <input matInput type="password" [(ngModel)]="password">
+                </mat-form-field>
+                <br>
+                <mat-icon class="fieldIcons" aria-hidden="false" aria-label="Example home icon">vpn_key</mat-icon>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Confirm Password</mat-label>
+                    <input matInput type="password" [(ngModel)]="confirmPassword">
+                </mat-form-field>
+                <br>
+                <button (click)="onSubmit()" mat-raised-button color="warn">
+                    TRANSFER
+                    <mat-icon aria-hidden="false" aria-label="Example home icon">fast_forward</mat-icon>
+                </button>
+            </mat-step>
+
+        </mat-horizontal-stepper>
+    </div>
+</div>

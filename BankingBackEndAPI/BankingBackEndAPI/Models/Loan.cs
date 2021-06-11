@@ -13,7 +13,8 @@ namespace BankingBackEndAPI.Models
         public int? LoanCustomerId { get; set; }
         public DateTime? LoanDateOfTransfer { get; set; }
         public decimal? LoanAmountTransffered { get; set; }
+        public int? LoanAccouontId { get; set; }
 
-        public virtual Customer LoanCustomer { get; set; }
+        public virtual Account LoanAccouont { get; set; }
     }
 }

@@ -1,0 +1,18 @@
+
+<h2>
+    <mat-icon aria-hidden="false" aria-label="Example home icon">article</mat-icon>
+    COMPLAIN
+</h2>
+
+<div class="mainContainer">
+    <div class="complainSection">
+        <mat-form-field floatLabel="auto" appearance="fill" color="primary" hideRequiredMarker>
+            <mat-label>Complain Body</mat-label>
+            <textarea style="height: 200px;" matInput [(ngModel)]="complainBody"></textarea>
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="onSubmit()">
+            SEND
+            <mat-icon aria-hidden="false" aria-label="Example home icon">send</mat-icon>
+        </button>
+    </div>
+</div>

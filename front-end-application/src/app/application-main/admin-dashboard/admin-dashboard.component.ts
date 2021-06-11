@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Chart,registerables } from 'chart.js'
+import { SharedService } from 'src/app/shared.service';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -11,29 +12,65 @@ export class AdminDashboardComponent implements OnInit {
 
   leftChart : any = []
   pieChart : any = []
+  doughChart : any = []
 
-  constructor() { 
+  graphData : any = []
+  grpahDate : any = []
+
+  imagePath : any
+  customerList : any
+  indicatorsData : any = {totalAccs:0,totalEmps:0,totalCusts:0,totalComps:0,totalDepts:0}
+
+  constructor(private service : SharedService) { 
     Chart.register(...registerables)
+    this.imagePath = service.photoURL
+    this.loadGraphData()
+    this.loadCustomeListData()
+    this.loadIndicatorsData()
   }
 
   ngOnInit(): void {
-    this.generateChart()
-    this.generatePie()
   }
 
 
+  loadIndicatorsData()
+  {
+    
+    this.service.getEmpDashboardIndicators().subscribe((data:any)=>{
+      this.indicatorsData = data
+    })
+  }
 
-  generateChart()
+  loadCustomeListData()
+  {
+    this.service.getCustomerOnDashboard().subscribe(data=>{
+      this.customerList = data
+    })
+  }
+
+
+  loadGraphData()
+  {
+    this.service.getGraphDataAdmin().subscribe((data : any)=>{
+      const d = data['graphData'].map(data=>data.val)
+      const e = data['graphData'].map(data=>data.date)
+      this.generateChart(d,e)
+      this.generateLineChart(d,e)
+      this.generateDoughnutChart(d,e)
+    })
+  }
+
+
+  generateChart(data :any , date : any)
   {
     var delayed;
     this.leftChart = new Chart('canvas',{
        type: 'bar',
-    data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-        }]
+        data: {
+          labels: date,
+          datasets: [{
+              data: data,
+          }]
     },
     options: {
       backgroundColor:'orange',
@@ -60,15 +97,16 @@ export class AdminDashboardComponent implements OnInit {
     })
   }
 
-  generatePie()
+  generateLineChart(data :any , date : any)
   {
     this.pieChart = new Chart('pChart',{
         type: 'line',
         data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: date,
         datasets: [{
             label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            data: data,
+            borderColor:'#9d03fc'
         }]
     },
   options: {
@@ -76,6 +114,35 @@ export class AdminDashboardComponent implements OnInit {
     plugins: {
       legend: {
         display:false
+      },
+      title: {
+        display: true,
+      }
+    }
+  },
+    })
+  }
+
+
+
+  generateDoughnutChart(data :any , date : any)
+  {
+    this.doughChart = new Chart('dNutChart',{
+        type: 'doughnut',
+        data: {
+        labels: date,
+        datasets: [{
+            label: '# of Votes',
+            data: data,
+            backgroundColor:'#9d03fc'
+        }]
+    },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        display:true,
+        position:'right'
       },
       title: {
         display: true,

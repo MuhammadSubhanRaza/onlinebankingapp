@@ -9,7 +9,7 @@ export class DataSharingService {
 
   data : any
 
-  isUpdate : boolean
+  isUpdate = false
   updateflag : boolean
   insertFlag : boolean
 

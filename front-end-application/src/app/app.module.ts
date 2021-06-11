@@ -64,6 +64,11 @@ import { NgxPrintModule } from 'ngx-print';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CompanyBalanceComponent } from './application-main/company-balance/company-balance.component';
 import { ViewBalanceComponent } from './application-main/company-balance/view-balance/view-balance.component';
+import { AllLoanapplicationsComponent } from './application-main/all-loanapplications/all-loanapplications.component';
+import { ComplaintMakeComponent } from './application-main/complaint-make/complaint-make.component';
+import { ComplaintViewComponent } from './application-main/complaint-view/complaint-view.component';
+import { GiveLoanComponent } from './application-main/give-loan/give-loan.component';
+import { HelpComponent } from './application-main/help/help.component';
 
 
 export function tokenGetter()
@@ -123,6 +128,11 @@ export function tokenGetter()
     ViewNotificationComponent,
     CompanyBalanceComponent,
     ViewBalanceComponent,
+    AllLoanapplicationsComponent,
+    ComplaintMakeComponent,
+    ComplaintViewComponent,
+    GiveLoanComponent,
+    HelpComponent,
     
   ],
   imports: [
@@ -136,6 +146,7 @@ export function tokenGetter()
     HttpClientModule,
     FlexLayoutModule,
     NgxPrintModule,
+    
     JwtModule.forRoot({
       config:{
         tokenGetter:tokenGetter,

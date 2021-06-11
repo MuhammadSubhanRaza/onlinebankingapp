@@ -268,6 +268,15 @@ isCustomerAuthenticated()
     return this.http.post(this.apiUrl+"notifiacations",val)
   }
 
+  fetchUnreadNotifications()
+  {
+    return this.http.get(this.apiUrl+"notifiacations")
+  }
+
+  markNotificationAsRead(val : any)
+  {
+    return this.http.put(this.apiUrl+"notifiacations/"+val.notId,val)
+  }
 
   //------------------------- TRANSACTION -------------
 
@@ -290,8 +299,121 @@ isCustomerAuthenticated()
 
   
 
-  //----------------------------- EMP SETTINGS ----------------
+  //-------------------------- ADMIN DASHBOARD ------------------
 
-  
+
+  getGraphDataAdmin()
+  {
+    return this.http.get(this.apiUrl+"empdashboard/getbargraphdata")
+  }  
+
+  getCustomerOnDashboard()
+  {
+    return this.http.get(this.apiUrl+"empdashboard/getcustomers")
+  }  
+
+  getEmpDashboardIndicators()
+  {
+    return this.http.get(this.apiUrl+"empdashboard/getindicators")
+  }  
+
+  getNumberOfRequests()
+  {
+    return this.http.get(this.apiUrl+"empdashboard/getrequestnotificationnumbers")
+  }
+
+  fetchComplaintsCounter()
+  {
+    return this.http.get(this.apiUrl+"empdashboard/getcomplaintscounter")
+  }
+
+
+  //-------------------------- CUSTOMER SETTINGS ---------------------
+
+
+  getAccountDetailsFromAccountNo(val : any)
+  {
+    return this.http.post(this.apiUrl+"accounts/getaccountfromaccountno",val)
+  }
+
+  getGraphDataOnCustSettings(val : any)
+  {
+    return this.http.post(this.apiUrl+"accounts/getbargraphdata",val)
+  }
+
+
+
+  //--------------------------- LOAN APPLICATION POST ----------------
+
+
+  addLoanApplication(val : any)
+  {
+    return this.http.post(this.apiUrl+"loanapplications",val)
+  }
+
+   getAllComplaints()
+  {
+    return this.http.get(this.apiUrl+"loanapplications/getunreadapplications")
+  }
+
+  getAccountDetailsThroughCustId(val : any)
+  {
+    return this.http.post(this.apiUrl+"accounts/getdatathroughcustid",val)
+  }
+
+  onLoanApprove(val : any)
+  {
+    return this.http.put(this.apiUrl+"loanapplications/"+val.loanAppId,val)
+  }
+
+  onLoanReject(val : any)
+  {
+    return this.http.delete(this.apiUrl+"loanapplications/"+val.loanAppId)
+  }
+
+  //--------------------------- COMPLAINS -------------------------
+
+  addComplain(val : any)
+  {
+    return this.http.post(this.apiUrl+"complaints",val)
+  }
+
+  fetchUnreadComplaints()
+  {
+    return this.http.get(this.apiUrl+"complaints")
+  }
+
+  markAsReadUnreadComplaints(val : any)
+  {
+    return this.http.put(this.apiUrl+"complaints/"+val.compId,val)
+  }
+ 
+
+  //--------------------------- GIVE LOAN ---------------------
+
+
+  addGiveLoan(val : any)
+  {
+    return this.http.post(this.apiUrl+"loans",val)
+  }
+
+
+  //---------------------------- CUST DASHBOARD--------------------
+
+
+  fetchCurrentTransactionsForCustDashboard(val : any)
+  {
+    return this.http.post(this.apiUrl+"custdashboard/getcurrenttransactions",val)
+  }
+
+  fetchCustomerDetailsOnCustDasshboard(val :any)
+  {
+    return this.http.get(this.apiUrl+"customers/"+val)
+  }
+
+  fetchAllCounterForCustDashboard(val : any)
+  {
+    return this.http.post(this.apiUrl+"custdashboard/getcustomersidenavcounters",val)
+  }
 
 }

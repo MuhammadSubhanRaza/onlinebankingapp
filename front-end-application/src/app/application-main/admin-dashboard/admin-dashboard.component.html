@@ -2,59 +2,59 @@
 <div class="mainContainer">
     <div class="indicator-sec">
         <div class="ind-block">
-            <mat-icon aria-hidden="false" class="ind-icon" aria-label="Example home icon">home</mat-icon>
+            <mat-icon aria-hidden="false" class="ind-icon" aria-label="Example home icon">account_balance_wallet</mat-icon>
             <div class="ind-content">
                 <button mat-button color="accent" matTooltip="View as List">
                     <mat-icon aria-hidden="false" aria-label="Example home icon">segment</mat-icon>
                 </button>
-                <h4>5000</h4>
+                <h4>{{indicatorsData.totalAccs}}</h4>
                 <mat-divider></mat-divider>
-                <p>Users</p>
+                <p>Accounts</p>
             </div>
         </div>
         <div class="ind-block">
-            <mat-icon aria-hidden="false" class="ind-icon" aria-label="Example home icon">home</mat-icon>
+            <mat-icon aria-hidden="false" class="ind-icon" aria-label="Example home icon">people</mat-icon>
             <div class="ind-content">
                 <button mat-button color="accent" matTooltip="View as List">
                     <mat-icon aria-hidden="false" aria-label="Example home icon">segment</mat-icon>
                 </button>
-                <h4>5000</h4>
+                <h4>{{indicatorsData.totalEmps}}</h4>
                 <mat-divider></mat-divider>
-                <p>Users</p>
+                <p>Employees</p>
             </div>
         </div>
         <div class="ind-block">
-            <mat-icon aria-hidden="false" class="ind-icon" aria-label="Example home icon">home</mat-icon>
+            <mat-icon aria-hidden="false" class="ind-icon" aria-label="Example home icon">groups</mat-icon>
             <div class="ind-content">
                 <button mat-button color="accent" matTooltip="View as List">
                     <mat-icon aria-hidden="false" aria-label="Example home icon">segment</mat-icon>
                 </button>
-                <h4>5000</h4>
+                <h4>{{indicatorsData.totalCusts}}</h4>
                 <mat-divider></mat-divider>
-                <p>Users</p>
+                <p>Customers</p>
             </div>
             <mat-divider></mat-divider>
         </div>
         <div class="ind-block">
-            <mat-icon aria-hidden="false" class="ind-icon" aria-label="Example home icon">home</mat-icon>
+            <mat-icon aria-hidden="false" class="ind-icon" aria-label="Example home icon">apps</mat-icon>
             <div class="ind-content">
                 <button mat-button color="accent" matTooltip="View as List">
                     <mat-icon aria-hidden="false" aria-label="Example home icon">segment</mat-icon>
                 </button>
-                <h4>5000</h4>
+                <h4>{{indicatorsData.totalDepts}}</h4>
                 <mat-divider></mat-divider>
-                <p>Users</p>
+                <p>Departments</p>
             </div>
         </div>
         <div class="ind-block">
-            <mat-icon aria-hidden="false" class="ind-icon" aria-label="Example home icon">home</mat-icon>
+            <mat-icon aria-hidden="false" class="ind-icon" aria-label="Example home icon">badge</mat-icon>
             <div class="ind-content">
                 <button mat-button color="accent" matTooltip="View as List">
                     <mat-icon aria-hidden="false" aria-label="Example home icon">segment</mat-icon>
                 </button>
-                <h4>5000</h4>
+                <h4>{{indicatorsData.totalComps}}</h4>
                 <mat-divider></mat-divider>
-                <p>Users</p>
+                <p>Complaints</p>
             </div>
         </div>
     </div>
@@ -66,94 +66,19 @@
                 <canvas id="canvas" class="leftCan">{{leftChart}}</canvas>
             </div>
             <div class="graph-right">
-                <canvas id="pChart">{{pieChart}}</canvas>
+                <canvas id="dNutChart">{{doughChart}}</canvas>
             </div>
         </div>
         <div class="sec-content">
             <div style="padding-left: 20px;" class="mat-body-1">Newly Added Customers</div>
             <div class="list-customer">
-                <div class="list-member">
-                    <img src="./.../../../../../assets/person.jpg" alt="">
+                <div class="list-member" *ngFor="let item of customerList">
+                    <img [src]="imagePath+item.custImagePath" alt="Employee Image">
                     <table>
                         <tr>
                             <td>
-                                <p class="list-cst-name">Muhammad Subhan Raza</p>
-                                <p class="list-act-name">Saving Account</p>
-                            </td>
-                        </tr>
-                    </table>
-                    <button mat-button color="primary">
-                        View
-                        <mat-icon aria-hidden="false" aria-label="Example home icon">visibility</mat-icon>
-                    </button>
-                </div>
-                <div class="list-member">
-                    <img src="./.../../../../../assets/person.jpg" alt="">
-                    <table>
-                        <tr>
-                            <td>
-                                <p class="list-cst-name">Muhammad Subhan Raza</p>
-                                <p class="list-act-name">Saving Account</p>
-                            </td>
-                        </tr>
-                    </table>
-                    <button mat-button color="primary">
-                        View
-                        <mat-icon aria-hidden="false" aria-label="Example home icon">visibility</mat-icon>
-                    </button>
-                </div>
-                <div class="list-member">
-                    <img src="./.../../../../../assets/person.jpg" alt="">
-                    <table>
-                        <tr>
-                            <td>
-                                <p class="list-cst-name">Muhammad Subhan Raza</p>
-                                <p class="list-act-name">Saving Account</p>
-                            </td>
-                        </tr>
-                    </table>
-                    <button mat-button color="primary">
-                        View
-                        <mat-icon aria-hidden="false" aria-label="Example home icon">visibility</mat-icon>
-                    </button>
-                </div>
-                <div class="list-member">
-                    <img src="./.../../../../../assets/person.jpg" alt="">
-                    <table>
-                        <tr>
-                            <td>
-                                <p class="list-cst-name">Muhammad Subhan Raza</p>
-                                <p class="list-act-name">Saving Account</p>
-                            </td>
-                        </tr>
-                    </table>
-                    <button mat-button color="primary">
-                        View
-                        <mat-icon aria-hidden="false" aria-label="Example home icon">visibility</mat-icon>
-                    </button>
-                </div>
-                <div class="list-member">
-                    <img src="./.../../../../../assets/person.jpg" alt="">
-                    <table>
-                        <tr>
-                            <td>
-                                <p class="list-cst-name">Muhammad Subhan Raza</p>
-                                <p class="list-act-name">Saving Account</p>
-                            </td>
-                        </tr>
-                    </table>
-                    <button mat-button color="primary">
-                        View
-                        <mat-icon aria-hidden="false" aria-label="Example home icon">visibility</mat-icon>
-                    </button>
-                </div>
-                <div class="list-member">
-                    <img src="./.../../../../../assets/person.jpg" alt="">
-                    <table>
-                        <tr>
-                            <td>
-                                <p class="list-cst-name">Muhammad Subhan Raza</p>
-                                <p class="list-act-name">Saving Account</p>
+                                <p class="list-cst-name">{{item.custFirstName+" "+item.custLastName}}</p>
+                                <p class="list-act-name">{{item.custEmail}}</p>
                             </td>
                         </tr>
                     </table>
@@ -166,7 +91,7 @@
             </div>
 
             <div class="spinner-sec">
-                <table>
+                <!-- <table>
                     <tr>
                         <td>
                             <mat-spinner mode="determinate" value="70"></mat-spinner>
@@ -186,7 +111,9 @@
                         </td>
                         
                     </tr>
-                </table>
+                </table> -->
+                
+                <canvas id="pChart">{{pieChart}}</canvas>
             </div>
         </div>
     </div>

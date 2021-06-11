@@ -43,8 +43,8 @@ export class EmpSettingsComponent implements OnInit {
         if(this.newPassword.length>8){
           this.loggedInUser.empPassword = this.newPassword
           this.service.updateEmployee(this.loggedInUser).subscribe(data=>{
-          this.service.logout()
-          this.router.navigate(['login'])
+            this.service.logout()
+            this.router.navigate(['login'])
           })
         }
         else

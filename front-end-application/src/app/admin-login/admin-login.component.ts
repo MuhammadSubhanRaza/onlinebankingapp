@@ -40,6 +40,7 @@ export class AdminLoginComponent implements OnInit {
       this.setLoggedInDataData((<any>response).emp)
       localStorage.setItem("jwt",token);
       localStorage.setItem("empjwt",token);
+      localStorage.setItem("isAdmin","true")
       this.invalidLogin = false;
       this.router.navigate(["onlinebanking/admindashboard"]);
     },err=>{

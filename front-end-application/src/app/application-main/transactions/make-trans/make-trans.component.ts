@@ -38,7 +38,7 @@ export class MakeTransComponent implements OnInit {
   {
     if(this.currentPassword!=this.confirmPassword)
     {
-      this.snackBar.open("Password did to match","Okay",{duration:3000})
+      this.snackBar.open("Password did not match","Okay",{duration:3000})
       return false;
     }
     else

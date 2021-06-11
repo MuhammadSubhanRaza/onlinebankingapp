@@ -7,10 +7,10 @@
             <div style="flex: 1 1 0%; box-sizing: border-box;">
                 <div class="balanceIndicator amount">
                     <div class="mat-body-1">Available Balance</div>
-                    <h2>250000 PKR</h2>
+                    <h2>{{accOpeningBalance}} PKR</h2>
                     <br><br>
-                    <div class="mat-caption">Savnig Account</div>
-                    <div class="mat-body-2">ISB789-96321558745-11254-0024</div>
+                    <div class="mat-caption">{{accountType}}</div>
+                    <div class="mat-body-2">{{accCode}}</div>
                 </div>
             </div>
             <div fxFlex="" style="flex: 1 1 0%; box-sizing: border-box;">
@@ -42,7 +42,26 @@
         <div fxLayout="row" fxLayout.xs="column">
             <div fxFlex="" style="flex: 1 1 0%; box-sizing: border-box;">
                 <div class="balanceIndicator graph">
-        
+                    <div class="transList">
+                        <div class="transMember" *ngFor="let item of currentTransactions">
+                            <table>
+                                <tr>
+                                    <td style="width: 100px;">
+                                        <span class="listIndicator">{{item.tranRecieverName[0]}}</span>
+                                    </td>
+                                    <td style="width: 150px;">
+                                        <b>{{item.tranAmountTransffered}}</b>
+                                    </td>
+                                    <td>
+                                        {{item.tranDate}}
+                                    </td>
+                                    <td>
+                                        {{item.tranAccountNoReciever}}
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -78,7 +97,7 @@
             </div>
             <div fxFlex="" style="flex: 1 1 0%; box-sizing: border-box;">
                 <div class="balanceIndicator spin">
-                    
+                    <canvas id="canvas" class="leftCan">{{leftChart}}</canvas>
                 </div>
             </div>
         </div>
@@ -94,11 +113,11 @@
                                 <img src="./../../assets/person.jpg" alt="">
                             </td>
                             <td>
-                                <h3>Muhammad Subhan Raza</h3>
+                                <h3>{{custName}}</h3>
                             </td>
                         </tr>
                         <tr>
-                            <td>msraza302@gmail.com</td>
+                            <td>{{custEmail}}</td>
                         </tr>
                         <tr>
                             <td>

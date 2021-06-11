@@ -1,0 +1,71 @@
+.mainContainer {
+  width: 1000px;
+  max-height: 500px;
+}
+
+.mainContainer h3 {
+  color: rgb(66, 2, 168);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+.developerSection {
+  display: flex;
+}
+
+.developerCard {
+  width: 300px;
+  text-align: center;
+  border: solid 1px rgb(184, 184, 184);
+  margin-left: 10px;
+}
+
+.cardHeader {
+  background: url("./../../../assets/cardbackground.jpg");
+  background-size: cover;
+  height: 150px;
+  position: relative;
+}
+
+.cardHeader img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: solid 4px white;
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cardbody h2 {
+  padding: 0;
+  margin: 0;
+  padding-top: 60px;
+}
+
+.cardbody p {
+  padding: 0px;
+  margin: 0;
+}
+
+.skillset {
+  text-align: left;
+  margin-left: 50px;
+  width: fit-content;
+}
+.skillGroup {
+  padding-left: 25px;
+}
+
+.cardFooter {
+  padding: 5px 0px;
+}
+
+.footer {
+  text-align: center;
+  padding: 7px;
+  background-color: rgb(209, 209, 209);
+}
