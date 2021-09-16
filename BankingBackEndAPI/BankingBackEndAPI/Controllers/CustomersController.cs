@@ -128,7 +128,7 @@ namespace BankingBackEndAPI.Controllers
             }
             catch (Exception)
             {
-                return new JsonResult("anonymous.png");
+                return new JsonResult("anonymous.png"); 
             }
         }
 
